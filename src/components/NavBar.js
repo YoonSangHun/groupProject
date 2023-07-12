@@ -17,15 +17,16 @@ const NavBar = () => {
                     <Link to = "/Detail">Detail</Link>
                 </ul>
                 <ul>
-                    {/* 로그인 */}
-                    <Link to = "/Login">Login</Link>
+                    {/* 회원가입 */}
                     
-                </ul>
-                <ul>
-                    {/* 회원가입 버튼 */}
                     <Link to = "/SignUp">SignUp</Link>
                 </ul>
                 <ul>
+                    {/* 로그인 */}
+                    <Link to = "/Login">Login</Link>
+                </ul>
+                <ul>
+                    {/* 마이페이지 */}
                     <Link to = "/MyPage">My page</Link>
                 </ul>
                 </nav>
