@@ -6,7 +6,7 @@ import '../custom.css';  // Import custom CSS
 const Login = () => {
   return (
     <main className="container">
-      <NavBar />
+      <hr/><NavBar />
       <hr/>
       <article className="grid">
         <div>
