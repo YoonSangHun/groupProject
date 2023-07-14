@@ -1,7 +1,7 @@
 import React from "react";
 import NavBar from "../components/NavBar";
 import '@picocss/pico/css/pico.min.css';  // Import Pico CSS
-import '../custom.css';  // Import custom CSS
+import './Login.css';  // Import custom CSS
 
 const Login = () => {
   return (
