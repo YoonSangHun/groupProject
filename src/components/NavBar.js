@@ -8,26 +8,26 @@ const NavBar = () => {
                 <ul />
                 <ul>
                     {/*Logo 가 들어갈 부분  */}
-                    <Link to = "/"><strong style={{fontSize: '35px'}}><i>UniCom</i></strong></Link>
+                    <Link to = "/"><img src="./img/logo.jpg" alt="unicom logo"/></Link>
                 </ul>
                 <nav className='container fluid'>
                 <ul/><ul/><ul/><ul/><ul/><ul/>
                 <ul>
                     {/* 기업상세화면 */}
-                    <Link to = "/Detail">Detail</Link>
+                    <Link to = "/Detail"><strong>Detail</strong></Link>
                 </ul>
                 <ul>
                     {/* 회원가입 */}
                     
-                    <Link to = "/SignUp">SignUp</Link>
+                    <Link to = "/SignUp"><strong>SignUp</strong></Link>
                 </ul>
                 <ul>
                     {/* 로그인 */}
-                    <Link to = "/Login">Login</Link>
+                    <Link to = "/Login"><strong>Login</strong></Link>
                 </ul>
                 <ul>
                     {/* 마이페이지 */}
-                    <Link to = "/MyPage">My page</Link>
+                    <Link to = "/MyPage"><strong>My page</strong></Link>
                 </ul>
                 </nav>
             </nav>

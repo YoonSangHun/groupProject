@@ -1,49 +1,41 @@
 import React from "react";
-import NavBar from "../components/NavBar";
 import '@picocss/pico/css/pico.min.css';  // Import Pico CSS
-import './Login.css';  // Import custom CSS
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
-    <main className="container">
-      <hr/><NavBar />
-      <hr/>
-      <article className="grid">
-        <div>
-          <hgroup>
-            <h1>Sign in</h1>
-            <h2>A minimalist layout for Login pages</h2>
-          </hgroup>
-          <form>
-            <input
-              type="text"
-              name="login"
-              placeholder="Login"
-              aria-label="Login"
-              autoComplete="nickname"
-              required
-            />
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              aria-label="Password"
-              autoComplete="current-password"
-              required
-            />
-            <fieldset>
-              <label htmlFor="remember">
-                <input type="checkbox" role="switch" id="remember" name="remember" />
-                Remember me
-              </label>
-            </fieldset>
-            <button type="submit" className="contrast">Login</button>
-          </form>
-        </div>
-        <div></div>
-      </article>
-    </main>
-  );
-}
+          <dialog open>
+            <article>
+                <Link to="/"><div aria-label="Close" className="close"></div></Link>
+                    <hgroup>
+                    <h1>Please Login</h1><hr/><br/>
+                    <h2><i>로그인 먼저 해주세요 :)</i></h2>
+                </hgroup>
+                <form>
+                    <input
+                        type="text"
+                        name="login"
+                        placeholder="아이디"
+                        aria-label="Login"
+                        autoComplete="nickname"
+
+                    />
+                    <input
+                        type="password"
+                        name="password"
+                        placeholder="비밀번호"
+                        aria-label="Password"
+                        autoComplete="current-password"
+
+                    />
+                    <div className='grid'>
+                        <button type="submit">로그인</button>
+                        <Link to='/SignUp'><button className='primary outline'>회원가입 하러가기</button></Link>
+                    </div>
+                </form>
+            </article>
+          </dialog>
+          );
+;}
 
 export default Login;

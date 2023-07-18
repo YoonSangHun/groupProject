@@ -1,36 +1,44 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import './CardSwiper.css'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import { Pagination, Navigation } from 'swiper/modules';
+import 'swiper/css/effect-coverflow';
+import { Pagination, EffectCoverflow, Mousewheel } from 'swiper/modules';
 
 const CardSwiper = () => {
     return (
-        <main className='container'>
+        <>
             <Swiper
-                    slidesPerView={2}
-                    spaceBetween={30}
-                    loop={true}
-                    pagination={{
-                      clickable: true,
-                    }}
-                    navigation={true}
-                    modules={[Pagination, Navigation]}
-                    className="mySwiper"
+                effect={'coverflow'}
+                mousewheel={true}
+                grabCursor={true}
+                loop={true}
+                centeredSlides={true}
+                slidesPerView={'auto'}
+                coverflowEffect={{
+                  rotate: 100,
+                  stretch: 0,
+                  depth: 0,
+                  modifier: 2,
+                  slideShadows: true,
+                  overhidden: true,
+                }}
+                pagination={true}
+                modules={[EffectCoverflow, Pagination,Mousewheel]}
+    
             >
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>A유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>B유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>C유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>D유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>E유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>F유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>G유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>H유형</SwiperSlide>
-                    <SwiperSlide><img src='img/alessio-soggetti-8jeWeKdygfk-unsplash-1000x1200.jpg'/>I유형</SwiperSlide>
+                <SwiperSlide><img src='img/10.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/12.png' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/13.png' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/14.png' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/15.png' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/8.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/5.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/7.jpg' alt="type"/></SwiperSlide>
             </Swiper>
-        </main>
+        </>
     );
 }
 
