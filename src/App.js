@@ -11,6 +11,7 @@ import MyPage from './pages/MyPage';
 import Confirm from './components/Confirm';
 import Test from './pages/Test';
 import AuthContext from './components/AuthContext';
+import EmailVerification from './components/EmailVerification'; 
 
 
 // Configure Amplify
@@ -44,6 +45,7 @@ function App() {
           <Route path="/MyPage" element={<MyPage />}></Route>
           <Route path="/Test" element={<Test />}></Route>
           <Route path="MyPage/Confirm" element={<Confirm />}></Route>
+          <Route path="/EmailVerification" element={<EmailVerification />}></Route>
         </Routes>
       </BrowserRouter>
     </AuthContext.Provider>
