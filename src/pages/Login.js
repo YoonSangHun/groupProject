@@ -13,7 +13,8 @@ const Login = () => {
 
    const { checkUser } = useContext(AuthContext);
 
-  const signIn = async () => {
+   const signIn = async (event) => {
+    event.preventDefault();
     try {
       await Auth.signIn(username, password);
       checkUser();  // Update authentication state immediately after login
@@ -50,7 +51,7 @@ const Login = () => {
                     onChange={e => setPassword(e.target.value)} 
                     placeholder="비밀번호" 
                   />
-                  <button onClick={signIn}>로그인</button>
+                  <button onClick={(event) => signIn(event)}>로그인</button>
                   {error && <p>{error}</p>}  // Display error message
                 </form>
               </div>  
