@@ -27,19 +27,20 @@ const NavBar = () => {
           <ul/><ul/><ul/><ul/><ul/><ul/>
           <ul>
             {/* 기업상세화면 */}
-            <Link to = "/Detail">Detail</Link>
+            { isAuthenticated ? <Link to = "/Detail"><strong>Detail</strong></Link> : <Link to = "Login">Detail</Link> }
+            
           </ul>
           <ul>
             {/* 회원가입 */}
-            { !isAuthenticated && <Link to = "/SignUp">SignUp</Link> }
+            { !isAuthenticated ? <Link to = "/SignUp"><strong>SignUp</strong></Link> : "SignUp" }
           </ul>
           <ul>
             {/* 로그인 로그아웃*/}
-            { isAuthenticated ? <button className="logout" onClick={handleLogout}>Log Out</button> : <Link to = "/Login">Log In</Link> }
+            { isAuthenticated ? <Link onClick={handleLogout}><strong>Log out</strong></Link> : <Link to = "/Login"><strong>Log In</strong></Link> }
           </ul>
           <ul>
             {/* 마이페이지 */}
-            { isAuthenticated && <Link to = "/MyPage">My page</Link> }
+            { isAuthenticated ? <Link to = "/MyPage"><strong>My page</strong></Link> : <Link to = "/Login">My page</Link>}
           </ul>
         </nav>
       </nav>
