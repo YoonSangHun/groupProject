@@ -1,0 +1,11 @@
+{
+  "AppSyncApiName": "unicom",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authunicom8e08b55a",
+      "Outputs.UserPoolId"
+    ]
+  }
+}

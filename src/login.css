@@ -81,3 +81,24 @@ article div:nth-of-type(2) {
 body>footer {
   padding: 1rem 0;
 }
+
+/* Add this to your login.css file */
+
+button.logout {
+  background-color: #008cba;  /* Replace with your desired background color */
+  color: white;  /* Replace with your desired text color */
+  border: none;
+  padding: 12px 24px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button.logout:hover {
+  background-color: white;
+  color: #008cba;
+}

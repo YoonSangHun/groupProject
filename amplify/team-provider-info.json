@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-unicom-dev-131028-authRole",
+      "UnauthRoleArn": "arn:aws:iam::118320467932:role/amplify-unicom-dev-131028-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::118320467932:role/amplify-unicom-dev-131028-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-unicom-dev-131028-deployment",
+      "UnauthRoleName": "amplify-unicom-dev-131028-unauthRole",
+      "StackName": "amplify-unicom-dev-131028",
+      "StackId": "arn:aws:cloudformation:eu-north-1:118320467932:stack/amplify-unicom-dev-131028/8c159370-22c5-11ee-9e55-0ae523c5c9d0",
+      "AmplifyAppId": "d1mojpiqfl0crd"
+    },
+    "categories": {
+      "auth": {
+        "unicom8e08b55a": {}
+      },
+      "api": {
+        "unicom": {}
+      }
+    }
+  }
+}
