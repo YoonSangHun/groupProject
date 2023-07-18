@@ -31,7 +31,7 @@ const Login = () => {
 
   return (
     <main className="container">
-      <NavBar />
+      <hr/><NavBar />
       <hr/>
       <article className="grid">
         <div>

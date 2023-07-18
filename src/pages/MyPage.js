@@ -3,7 +3,7 @@ import NavBar from "../components/NavBar";
 const MyPage = () => {
     return (
         <main className="container">
-            <NavBar /><hr/>
+            <hr/><NavBar /><hr/>
         </main>
     );
 }

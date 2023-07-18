@@ -6,6 +6,7 @@ import { Auth } from 'aws-amplify';
 import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
+<<<<<<< HEAD
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -49,6 +50,13 @@ const SignUp = () => {
       </article>
     </main>
   );
+=======
+    return (
+        <main className="container">
+            <hr/><NavBar /><hr/>
+        </main>
+    );
+>>>>>>> 18cc9fd69b53f5a805f12ed6120b43d86c45895d
 }
 
 export default SignUp;
