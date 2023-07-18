@@ -41,7 +41,7 @@ const SignUp = () => {
             placeholder="비밀번호" 
           />
           <button onClick={handleSignUp}>회원가입</button>
-          {error && <p>{error}</p>}  // Display error message
+          {error && console.log(error)}
         </div>
       </article>
     </dialog>

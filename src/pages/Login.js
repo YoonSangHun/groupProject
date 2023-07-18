@@ -18,7 +18,7 @@ const Login = () => {
     try {
       await Auth.signIn(username, password);
       checkUser();  // Update authentication state immediately after login
-      navigate("/MyPage");
+      navigate("/");
     } catch (error) {
       setError(error.message);
       console.log('error signing in', error);
@@ -52,9 +52,9 @@ const Login = () => {
                     placeholder="비밀번호" 
                   />
                   <button onClick={(event) => signIn(event)}>로그인</button>
-                  {error && <p>{error}</p>}  // Display error message
+                  {error && console.log(error)}
                 </form>
-              </div>  
+              </div>
             </article>
         </dialog>
           );
