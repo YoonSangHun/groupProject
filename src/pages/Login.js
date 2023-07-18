@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';  // Import useContext
 import NavBar from '../components/NavBar';
 import '@picocss/pico/css/pico.min.css';
-import '../login.css';
+import '../Login.css';
 import { Auth } from 'aws-amplify';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../components/AuthContext';
