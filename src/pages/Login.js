@@ -40,16 +40,21 @@ const Login = () => {
 
               <div>
                 <form>
-                  <input 
+                  <input
+                     
                     value={username} 
+                    type='text'
                     onChange={e => setUsername(e.target.value)} 
-                    placeholder="User ID" 
+                    placeholder="User ID"
+                                       
                   />
-                  <input 
+                  <input
+                    
                     value={password} 
                     type="password"
                     onChange={e => setPassword(e.target.value)} 
-                    placeholder="비밀번호" 
+                    placeholder="비밀번호"
+                   
                   />
                   <button onClick={(event) => signIn(event)}>로그인</button>
                   {error && <p>{error}</p>}
