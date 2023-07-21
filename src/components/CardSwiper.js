@@ -31,7 +31,7 @@ const CardSwiper = () => {
             >
                 <SwiperSlide><img src='img/10.jpg' alt="type"/></SwiperSlide>
                 <SwiperSlide><img src='img/12.png' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/13.png' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/1.png' alt="type"/></SwiperSlide>
                 <SwiperSlide><img src='img/14.png' alt="type"/></SwiperSlide>
                 <SwiperSlide><img src='img/15.png' alt="type"/></SwiperSlide>
                 <SwiperSlide><img src='img/8.jpg' alt="type"/></SwiperSlide>

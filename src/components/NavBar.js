@@ -1,15 +1,17 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Auth } from 'aws-amplify';
 import AuthContext from '../components/AuthContext';
 
 const NavBar = () => {
   const { isAuthenticated, checkUser } = useContext(AuthContext);
-    
+  const navigate = useNavigate();  
   const handleLogout = async () => {
     try {
       await Auth.signOut();
       checkUser();  // Update the authentication status after sign out
+      alert("로그아웃 되었습니다.")
+      navigate("/");
     } catch (error) {
       console.error('error signing out: ', error);
     }
