@@ -42,12 +42,12 @@ const SignUp = () => {
             <h1>Sign Up</h1>
             <h2>회원가입을 진행해주세요</h2>
           </hgroup>
-          <input value={username} onChange={e => setUsername(e.target.value)} placeholder="User ID" />
+          <input value={username} onChange={e => setUsername(e.target.value)} placeholder="ID" />
           <input value={password} type="password" onChange={e => setPassword(e.target.value)} placeholder="비밀번호" />
-          <input value={email} onChange={e => setEmail(e.target.value)} placeholder="Email" />
-          <input value={name} onChange={e => setName(e.target.value)} placeholder="Name" />
-          <input value={birth} onChange={e => setAge(e.target.value)} placeholder="Birth" />
-          <input value={address} onChange={e => setAddress(e.target.value)} placeholder="Address" />
+          <input value={email} onChange={e => setEmail(e.target.value)} placeholder="메일주소" />
+          <input value={name} onChange={e => setName(e.target.value)} placeholder="이름" />
+          <input value={birth} onChange={e => setAge(e.target.value)} placeholder="생년월일" />
+          <input value={address} onChange={e => setAddress(e.target.value)} placeholder="주소" />
           <button onClick={handleSignUp}>회원가입</button>
           {error && <p>{error}</p>}
         </div>
