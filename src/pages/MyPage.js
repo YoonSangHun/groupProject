@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-
+// userdata delete 기능 필요
 const MyPage = () => {
 
     return (
