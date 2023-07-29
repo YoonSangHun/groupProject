@@ -19,6 +19,7 @@ const Login = () => {
       await Auth.signIn(username, password);
       checkUser();  // Update authentication state immediately after login
       navigate("/");
+      alert("로그인 되었습니다.")
     } catch (error) {
       setError(error.message);
       console.log('error signing in', error);
@@ -27,7 +28,7 @@ const Login = () => {
 
   useEffect(() => {
     checkUser();
-  }, []);
+  }, [checkUser]);
 
   return (
           <dialog open>
