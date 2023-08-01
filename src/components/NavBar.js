@@ -34,7 +34,7 @@ const NavBar = () => {
           </ul>
           <ul>
             {/* 회원가입 */}
-            { !isAuthenticated ? <Link to = "/SignUp"><strong>SignUp</strong></Link> : "SignUp" }
+            { !isAuthenticated ? <Link to = "/SignUp"><strong>SignUp</strong></Link> : <Link>SignUp</Link> }
           </ul>
           <ul>
             {/* 로그인 로그아웃*/}

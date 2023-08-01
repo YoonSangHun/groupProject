@@ -36,7 +36,6 @@ const CardSwiper = () => {
                 <SwiperSlide><img src='img/15.png' alt="type"/></SwiperSlide>
                 <SwiperSlide><img src='img/8.jpg' alt="type"/></SwiperSlide>
                 <SwiperSlide><img src='img/5.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/7.jpg' alt="type"/></SwiperSlide>
             </Swiper>
         </>
     );
