@@ -1,6 +1,6 @@
 import NavBar from "../components/NavBar";
 
-const Test = () => {
+const TypeTest = () => {
     return (
         <main className="container">
             <hr/><NavBar /><hr/>
@@ -8,4 +8,4 @@ const Test = () => {
     );
 }
 
-export default Test;
+export default TypeTest;

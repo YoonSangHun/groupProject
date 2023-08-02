@@ -10,7 +10,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-
+  const { setLoginState } = useContext(AuthContext);
    const { checkUser } = useContext(AuthContext);
 
    const signIn = async (event) => {
@@ -20,6 +20,8 @@ const Login = () => {
       checkUser();  // Update authentication state immediately after login
       navigate("/");
       alert("로그인 되었습니다.")
+      setLoginState(true);
+      
     } catch (error) {
       setError(error.message);
       console.log('error signing in', error);

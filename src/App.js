@@ -9,9 +9,9 @@ import SignUp from './pages/SignUp';
 import Detail from './pages/Detail';
 import MyPage from './pages/MyPage';
 import Confirm from './components/Confirm';
-import Test from './pages/Test';
 import AuthContext from './components/AuthContext';
 import EmailVerification from './components/EmailVerification'; 
+import TypeTest from './pages/TypeTest';
 
 
 // Configure Amplify
@@ -43,7 +43,7 @@ function App() {
           <Route path="/SignUp" element={<SignUp />}></Route>
           <Route path="/Detail" element={<Detail />}></Route>
           <Route path="/MyPage" element={<MyPage />}></Route>
-          <Route path="/Test" element={<Test />}></Route>
+          <Route path="/TypeTest" element={<TypeTest />}></Route>
           <Route path="MyPage/Confirm" element={<Confirm />}></Route>
           <Route path="/EmailVerification" element={<EmailVerification />}></Route>
         </Routes>
