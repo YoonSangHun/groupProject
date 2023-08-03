@@ -29,13 +29,13 @@ const CardSwiper = () => {
                 modules={[EffectCoverflow, Pagination,Mousewheel]}
     
             >
-                <SwiperSlide><img src='img/10.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/12.png' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/1.png' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/14.png' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/15.png' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/8.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/5.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/0번_두산_여유.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/1번_오뚜기_꼼꼼한.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/2번_JW중외제약_의욕과다.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/3번_코웨이_안전제일.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/4번_SK가스_다재다능.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/5번_경동나비엔_성장하는.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/6번_유니드_팔방미인.jpg' alt="type"/></SwiperSlide>
             </Swiper>
         </>
     );
