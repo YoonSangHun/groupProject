@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import NavBar from "../components/NavBar";
+import { Link } from 'react-scroll';
 
 const Detail = () => {
     const [searchInput, setSearchInput] = useState(''); // New state variable for the search input
@@ -33,10 +34,10 @@ const Detail = () => {
     return (        
         <main className="container">
             <hr/><NavBar/><hr/>
-            <article id="article">                       
+            <article id="article1">                       
                 <hgroup>
                     <br/>
-                    <h1 text align="center">"UniCom!  <kbd>{company_name || '삼성전자'}</kbd> 는 어떤 기업이죠?</h1><br/>
+                    <h1 text align="center">"UniCom!  <kbd>{ company_name || 'ㅇㅇㅇ' }</kbd> 은(는) 어떤 기업이죠?</h1><br/>
                     <h2 text align="center">
                         <strong>원하는 기업의 여러 정보를 확인하실 수 있는 페이지에요!</strong>
                     </h2>
@@ -53,41 +54,56 @@ const Detail = () => {
                         <input type="submit" value="Search" />
                     </form>
                 </div>
+            {/* 아래부터 시각화 이미지 렌더링 */}
             </article><hr/>
             <div className="grid">
                 <article id="logo">
                     <h4 text align="center"><i>About...</i></h4>
                     <img src={logoUrl} alt="logo"/>
-                    <footer><small><strong><mark>{company_name || '삼성전자'}</mark></strong>는요...!</small></footer>  
+                    <footer text align="center"><small><strong><mark>{ company_name }</mark></strong>는요...!</small></footer>  
                 </article>
                 <article id="wordcloud">
                     <h4 text align="center"><i>Word Cloud...</i></h4>
-                    <img src='img\wckakao.png' alt="wordcloud"/>
-                    <footer><small><strong><mark>이런 특징</mark></strong>이 있어요!</small></footer>  
-                </article>
-                <article id="type">
-                    <h4 text align="center"><i>Type...</i></h4>
-                    <img src='img\9.jpg' alt="type"/>
-                    <footer><small><strong><mark>ㅇㅇ유형</mark></strong>으로 분류되었어요!</small></footer>  
-                </article>
+                    <img src='img\wordcloudtest3.png' alt="wordcloud"/>
+                    <footer text align="center"><small><strong><mark>이런 장점</mark></strong>이 있어요!</small></footer>  
+                </article>               
             </div><hr/>
+
             <div className="grid">
                 <article id="genderratio">
                     <h4 text align="center"><i>Gender Ratio</i></h4>
                     <img src='img/sgraph.png' alt="genderratio"/>
-                    <footer><small>구성원의 <strong><mark>남녀성비</mark></strong>는 어떨까요?</small></footer>                  
+                    <footer text align="center"><small>구성원의 <strong><mark>남녀성비</mark></strong>는 어떨까요?</small></footer>                  
                 </article>
                 <article id="incomestate">
                     <h4 text align="center"><i>Income State</i></h4>
                     <img src='img\incomestate.png' alt="incomestate"/>
-                    <footer><small><strong><mark>재무제표 정보</mark></strong>를 그래프로!</small></footer>                  
+                    <footer text align="center"><small><strong><mark>재무제표 정보</mark></strong>를 그래프로!</small></footer>                  
                 </article>
-                <article id="Average Salary">
-                    <h4 text align="center"><i>Average Salary</i></h4>
-                    <img src='img\salary.png' alt="salary"/>
-                    <footer><small><strong><mark>평균 연봉</mark></strong>과 업계평균을 비교...?</small></footer>                  
-                </article>
+            </div><hr/>    
+            <div className='grid'>
+                <article id="type">
+                        <h4 text align="center"><i>Type...</i></h4>
+                        <img src='img\9.jpg' alt="type"/>
+                        <footer text align="center"><small><strong><mark>ㅇㅇ유형</mark></strong>으로 분류되었어요!</small></footer>  
+                    </article>
+                    <article id="Average Salary">
+                        <h4 text align="center"><i>Average Salary</i></h4>
+                        <img src='img\salary.png' alt="salary"/>
+                        <footer text align="center"><small><strong><mark>평균 연봉</mark></strong>과 업계평균을 비교...?</small></footer>                  
+                    </article>
+            </div><hr/>
+                   
+            <div className="grid">
+                <div />
+                    <Link to="article1" smooth={true}>
+                        <button className="primary outline">
+                            <strong>맨 위로</strong>
+                        </button>
+                    </Link>
+                <div />
             </div>
+
         </main>
     );
 }

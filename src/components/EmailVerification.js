@@ -22,12 +22,12 @@ const EmailVerification = () => {
     <dialog open>
       <article>
         <hgroup>
-          <h1>Email Verification</h1>
-          <h2>Please enter the verification code sent to your email</h2>
+          <h1>Email Verification!</h1>
+          <h2>회원가입 시 입력한 이메일 주소로 전송된 인증코드를 입력해주세요!</h2>
         </hgroup>
-        <input value={username} onChange={e => setUsername(e.target.value)} placeholder="Username" />
+        <input value={username} onChange={e => setUsername(e.target.value)} placeholder="입력하셨던 ID" />
         <input value={code} onChange={e => setCode(e.target.value)} placeholder="Verification code" />
-        <button onClick={verifyEmail}>Verify Email</button>
+        <button onClick={verifyEmail}>인증 완료하기</button>
         {error && <p>{error}</p>}
       </article>
     </dialog>
