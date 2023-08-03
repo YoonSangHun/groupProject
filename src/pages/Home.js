@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { animated, useSpring } from "react-spring";
 import NavBar from "../components/NavBar";
 import CardSwiper from "../components/CardSwiper";
 import CardSwiper2 from "../components/CardSwiper2";
@@ -8,11 +9,52 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from "../components/AuthContext";
 import { Link } from "react-scroll";
 
-
 const Home = () => {
   const { isAuthenticated } = useContext(AuthContext);
   const navigate = useNavigate();
-  
+
+  const fadeInAnimation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    config: { duration: 1000 },
+  });
+
+  // 각 article 요소들에 순차적인 애니메이션 효과를 적용하는 useSpring 훅
+  const article1Animation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 800, // article1은 이전 애니메이션 후 0.8초 딜레이 적용
+    config: { duration: 500 },
+  });
+
+  const article2Animation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 1500, // article2는 이전 애니메이션 후 1.5초 딜레이 적용
+    config: { duration: 500 },
+  });
+
+  const article3Animation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 2500, // article3은 이전 애니메이션 후 2.5초 딜레이 적용
+    config: { duration: 500 },
+  });
+
+  const article4Animation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 3500, // article4는 이전 애니메이션 후 3.5초 딜레이 적용
+    config: { duration: 500 },
+  });
+
+  const article5Animation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 4500, // article5는 이전 애니메이션 후 4.5초 딜레이 적용
+    config: { duration: 500 },
+  });
+
   const handleButtonClick = () => {
     if (isAuthenticated) {
       navigate("/TypeTest");
@@ -22,12 +64,12 @@ const Home = () => {
   };
 
   return (
-    <main className="container">
+    <animated.main className="container" style={fadeInAnimation}>
       <hr />
       <NavBar />
       <hr />
       <header className="container">
-        <article id="article1">
+        <animated.article id="article1" style={article1Animation}>
           <hgroup>
             <br />
             <h1 style={{ textAlign: "center" }}>
@@ -41,19 +83,19 @@ const Home = () => {
               </strong>
             </h2>
           </hgroup>
-        </article>
-        <article id="article2">
+        </animated.article>
+        <animated.article id="article2" style={article2Animation}>
           <CardSwiper />
-        </article>
-        <article id="article3">
+        </animated.article>
+        <animated.article id="article3" style={article3Animation}>
           <CardSwiper2 />
-        </article>
-        <article id="article4">
+        </animated.article>
+        <animated.article id="article4" style={article4Animation}>
           <CardSwiper3 />
-        </article>
-        <article id="article5">
+        </animated.article>
+        <animated.article id="article5" style={article5Animation}>
           <CardSwiper4 />
-        </article>
+        </animated.article>
       </header>
       <div className="grid">
         <div />
@@ -65,13 +107,10 @@ const Home = () => {
         <button className="primary" onClick={handleButtonClick}>
           <strong>내 기업유형 찾기 →</strong>
         </button>
-        
+
         <div />
       </div>
-     
-  
-
-    </main>
+    </animated.main>
   );
 };
 

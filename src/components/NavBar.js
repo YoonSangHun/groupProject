@@ -62,7 +62,7 @@ const NavBar = () => {
             <ul className="primary">
               
               <li>
-                <Link to="TypeTest">
+                <Link to="/TypeTest">
                   <strong>TypeTest</strong>
                 </Link>
               </li>
@@ -87,11 +87,11 @@ const NavBar = () => {
             </ul>
           ) : (
             <ul>
-              <Link to="/SignUp">
+              <Link to="SignUp">
                 <li><strong>Sign-Up</strong></li>
               </Link>
               <li/>
-              <Link to="/Login">
+              <Link to="Login">
                 <li><strong>Login</strong></li>
               </Link>
             </ul>

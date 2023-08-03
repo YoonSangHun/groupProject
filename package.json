@@ -17,6 +17,7 @@
     "react-scripts": "5.0.1",
     "react-scroll": "^1.8.9",
     "react-scroll-to": "^3.0.0-beta.6",
+    "react-spring": "^9.7.2",
     "swiper": "^10.0.4",
     "web-vitals": "^2.1.4"
   },

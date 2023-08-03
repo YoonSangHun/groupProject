@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import '@picocss/pico/css/pico.min.css';
 import { Auth } from 'aws-amplify';
 import { useNavigate } from 'react-router-dom';
+import { animated, useSpring } from "react-spring";
 
 const SignUp = () => {
   const [username, setUsername] = useState("");
@@ -12,6 +13,7 @@ const SignUp = () => {
   const [birth, setAge] = useState("");
   const [address, setAddress] = useState("");
   const [error, setError] = useState("");
+  
   const navigate = useNavigate();
 
   const handleSignUp = async () => {
@@ -33,9 +35,21 @@ const SignUp = () => {
     }
   };
 
+  // 애니메이션용 state와 설정
+  const [showForm, setShowForm] = useState(false);
+  const formAnimation = useSpring({
+    opacity: showForm ? 1 : 0,
+    transform: showForm ? "translateY(0)" : "translateY(-5000px)",
+  });
+
+  // 컴포넌트가 렌더링되면서 애니메이션 시작
+  React.useEffect(() => {
+    setShowForm(true);
+  }, []);
+
   return (
     <dialog open>
-      <article>
+      <animated.article style={formAnimation}>
         <Link to="/"><div aria-label="Close" className="close"></div></Link>
         <div>
           <hgroup>
@@ -51,7 +65,7 @@ const SignUp = () => {
           <button onClick={handleSignUp}>회원가입</button>
           {error && <p>{error}</p>}
         </div>
-      </article>
+      </animated.article>
     </dialog>
   );
 }
