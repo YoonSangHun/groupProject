@@ -116,7 +116,7 @@ const Detail = () => {
     }, [corp_code, company_name]);
 
     return (
-        <animated.main className="container" style={fadeInAnimation}>
+        <animated.main className="container" id="main" style={fadeInAnimation}>
           <hr />
           <NavBar />
           <hr />
@@ -241,7 +241,7 @@ const Detail = () => {
           <div className="grid">
             {/* 맨 위로 버튼 */}
             <div />
-            <Link to="article1" smooth={true}>
+            <Link to="main" smooth={true}>
               <button className="primary outline">
                 <strong>맨 위로</strong>
               </button>

@@ -92,7 +92,7 @@ const Home = () => {
   };
 
   return (
-    <animated.main className="container" style={fadeInAnimation}>
+    <animated.main className="container" id="main" style={fadeInAnimation}>
       <hr />
       <NavBar />
       <hr />
@@ -180,7 +180,7 @@ const Home = () => {
       </header>
       <div className="grid">
         <div />
-        <Link to="article1" smooth={true}>
+        <Link to="main" smooth={true}>
           <button className="primary outline">
             <strong>맨 위로</strong>
           </button>
