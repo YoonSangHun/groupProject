@@ -21,7 +21,7 @@ const CardSwiper = () => {
                   rotate: 100,
                   stretch: 0,
                   depth: 0,
-                  modifier: 2,
+                  modifier: 1,
                   slideShadows: true,
                   overhidden: true,
                 }}

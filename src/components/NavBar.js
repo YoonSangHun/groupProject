@@ -63,36 +63,36 @@ const NavBar = () => {
               
               <li>
                 <Link to="/TypeTest">
-                  <strong>TypeTest</strong>
+                  <strong>내 유형찾기</strong>
                 </Link>
               </li>
               <li/>
               <li>
                 <Link to="/Detail">
-                  <strong>Detail</strong>
+                  <strong>기업 상세정보</strong>
                 </Link>
               </li>
               <li/>
               <li>
                 <Link to="/MyPage">
-                  <strong>MyPage</strong>
+                  <strong>내 정보</strong>
                 </Link>
               </li>
               <li/>
               <li>
                 <Link to="/" onClick={handleLogout}>
-                  <strong>Logout</strong>
+                  <strong>로그아웃</strong>
                 </Link>
               </li>
             </ul>
           ) : (
             <ul>
               <Link to="SignUp">
-                <li><strong>Sign-Up</strong></li>
+                <li><strong>회원가입</strong></li>
               </Link>
               <li/>
               <Link to="Login">
-                <li><strong>Login</strong></li>
+                <li><strong>로그인</strong></li>
               </Link>
             </ul>
           )
@@ -101,39 +101,39 @@ const NavBar = () => {
             {showDetails && (
               <details role="list" dir="rtl" className="primary">
                 <summary aria-haspopup="menu" role="link" className="primary">
-                  <strong>Menu</strong>
+                  <strong>메뉴</strong>
                 </summary>
                 {isAuthenticated ? (
                   <ul role="listbox">
                     
                     <Link to="TypeTest">
                       <li>
-                        <strong>TypeTest</strong>
+                        <strong>내유형 찾기</strong>
                       </li>
                     </Link>
                     <Link to="/Detail">
                       <li>
-                        <strong>Detail</strong>
+                        <strong>기업 상세정보</strong>
                       </li>
                     </Link>
                     <Link to="/MyPage">
                       <li>
-                        <strong>MyPage</strong>
+                        <strong>내 정보</strong>
                       </li>
                     </Link>
                     <Link to="/" onClick={handleLogout}>
                       <li>
-                        <strong>Logout</strong>
+                        <strong>로그아웃</strong>
                       </li>
                     </Link>
                   </ul>
                 ) : (
                   <ul role="listbox">
                     <Link to="/SignUp">
-                      <li><strong>Sign-Up</strong></li>
+                      <li><strong>회원가입</strong></li>
                     </Link>
                     <Link to="/Login">
-                      <li><strong>Login</strong></li>
+                      <li><strong>로그인</strong></li>
                     </Link>
                   </ul>
                 )}

@@ -141,11 +141,11 @@ const Home = () => {
           <hgroup>
             <br />
             <h1 style={{ textAlign: "center" }}>
-              "계속 스크롤을 내리고, 좌우로 돌려보세요"
+              "계속 스크롤을 내리고 그림을 좌우로 돌려보세요."
             </h1><br/><br/>
             <h4 style={{ textAlign: "center" }}>
               <strong>
-                <i>다양한 기업데이터를 기반으로 <mark>새로운 분류</mark>를 시도한 끝에 얻어낸<br/> <mark>7가지 유형</mark>을 소개합니다.</i>
+                <i><mark>새로운 분류</mark>를 끈기있게 시도한 끝에 얻어낸<br/> <mark>7가지 유형</mark>을 소개합니다.</i>
               </strong>
             </h4>
             <br />
@@ -155,7 +155,7 @@ const Home = () => {
           <hgroup>
             <br />
             <h1 style={{ textAlign: "center" }}>
-              "분류된 기업유형에 재밌는 이름을 붙였습니다"
+              "분류된 기업유형에는 재미있는 이름을 붙여 주었어요."
             </h1><br/><br/>
             <h5 style={{ textAlign: "center" }}>
               <strong>

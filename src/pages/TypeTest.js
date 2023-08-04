@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import NavBar from '../components/NavBar';
-import { animated, useSpring } from 'react-spring';
+import { animated, config, useSpring } from 'react-spring';
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
 const questions = [
     {
@@ -47,6 +48,30 @@ const TypeTest = () => {
   const [selectedOption, setSelectedOption] = useState('');
   const [showResultButton, setShowResultButton] = useState(false);
 
+  // 진행도 바를 위해 총 문제수 정의
+  const totalQuestions = questions.length;
+
+  // 현재 질문에 대한 답이 선택되었는지 여부
+  const [answerSelected] = useState(false);
+
+  // 진행도 계산식 정의
+  const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
+  
+  // 스프링 애니메이션으로 프로그레스 바의 게이지 값 처리
+  const [animatedProgress, setAnimatedProgress] = useState(0);
+  const springProps = useSpring({
+    value: animatedProgress,
+    to: { value: answerSelected ? progress : animatedProgress }, // 답이 선택되었을 때만 게이지를 업데이트
+    config: config.default, // 기본 애니메이션 설정 사용 (가속도 조정 가능)
+  });
+
+  // animatedProgress가 변경될 때마다 프로그레스 바 값 업데이트
+  useEffect(() => {
+    setAnimatedProgress(progress);
+  }, [progress]);
+
+  
+
   // 문제가 바뀔 때 전체 화면에 애니메이션 효과를 부여하기 위한 useSpring 훅
   const fadeAnimation = useSpring({
     opacity: 1,
@@ -57,7 +82,7 @@ const TypeTest = () => {
   const handleAnswerChange = (e) => {
     setSelectedOption(e.target.value);
     if (currentQuestionIndex === 6) {
-    setShowResultButton(true); 
+        setShowResultButton(true); 
     } else {
         setShowResultButton(false);
     }
@@ -88,10 +113,16 @@ const TypeTest = () => {
       <hr />
       <NavBar />
       <hr />
+      {/* 소개 문구 */}
+
+      {/* 질문지 부분 */}
       <animated.article id="article">
         <h2 className='single-line-text'>{questions[currentQuestionIndex].text}</h2>
+        <animated.progress id="progress" value={springProps.value} max="100"></animated.progress>
+        
         <div>
           {questions[currentQuestionIndex].options.map((option, index) => (
+            
             <React.Fragment key={index}>
               <input
                 type="radio"

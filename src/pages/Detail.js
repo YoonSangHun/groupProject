@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import NavBar from "../components/NavBar";
 import { Link } from 'react-scroll';
 import { animated, useSpring } from 'react-spring';
+import CardSwiper2 from '../components/CardSwiperDetail';
 
 const Detail = () => {
     const [searchInput, setSearchInput] = useState(''); // New state variable for the search input
@@ -50,20 +51,6 @@ const Detail = () => {
         opacity: 1,
         from: { opacity: 0 },
         delay: 2500,
-        config: { duration: 500 },
-      });
-
-      const wordcloud2Animation = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
-        delay: 3500,
-        config: { duration: 500 },
-      });
-
-      const wordcloud3Animation = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
-        delay: 4500,
         config: { duration: 500 },
       });
 
@@ -125,7 +112,7 @@ const Detail = () => {
           <animated.article id="article1" style={article1Animation}>
             <hgroup>
               <br/>
-              <h1 text align="center">"UniCom!  <kbd>{ company_name || 'ㅇㅇㅇ' }</kbd> 은(는) 어떤 기업이죠?</h1><br/>
+              <h1 text align="center">"UniCom!  <mark>{ company_name || '0 0 0 0' }</mark> 은(는) 어떤 기업이죠?</h1><br/>
               <h2 text align="center">
                 <strong>원하는 기업의 여러 정보를 확인하실 수 있는 페이지에요!</strong>
               </h2>
@@ -150,43 +137,25 @@ const Detail = () => {
 
             {/* 로고 삽입부 */}
             <animated.article id="logo" style={logoAnimation}>
-              <h4 text align="center">About...</h4>
+              <h4 text align="center">About...</h4><hr/>
               <img src={logoUrl} alt="logo"/>
               <footer text align="center"><small><strong><mark>{ company_name }</mark></strong>는요...!</small></footer>  
             </animated.article>
 
             {/* 총평 워드클라우드 삽입부 */}
             <animated.article id="wordcloud1" style={wordcloud1Animation}>
-              <h4 text align="center">한 눈에 보는 이 기업 <mark>Keyword!</mark></h4>
-              <img src='img\wordcloudtest3.png' alt="wordcloud1"/>
-              <footer text align="center"><small><strong><mark>단어의 크기</mark></strong>가 중요해요!</small></footer>  
+              <h4 text align="center">한 눈에 보는 이 기업 <mark>Keyword!</mark></h4><hr/>
+              <CardSwiper2 />
+              <footer text align="center"><small><strong><mark>마우스 휠</mark>을 돌려 여러 특징을 확인하세요.</strong></small></footer>  
             </animated.article>
           </div>
           <hr />
 
           {/* 둘째줄 */}
           <div className='grid'>
-            {/* 장점 워드클라우드 삽입부 */}
-            <animated.article id="wordcloud2" style={wordcloud2Animation}>
-                <h4 text align="center">Word Cloud <mark>(장점)</mark></h4>
-                <img src='img/wordcloudtest3.png' alt="wordcloud2"/>
-                <footer text align="center"><small>많이 언급된<strong><mark>장점은?</mark></strong></small></footer>
-            </animated.article>
-            
-            {/* 단점 워드클라우드 삽입부 */}
-            <animated.article id="wordcloud3" style={wordcloud3Animation}>
-                <h4 text align="center">Word Cloud <mark>(단점)</mark></h4>
-                <img src='img\wordcloudtest3.png' alt="wordcloud3"/>
-                <footer text align="center"><small>많이 언급된<strong><mark>단점은?</mark></strong></small></footer>
-            </animated.article>
-          </div>
-          <hr />
-
-          {/* 셋째줄 */}
-          <div className='grid'>
             {/* 위치 정보 삽입부*/}
             <animated.article id="location" style={locationAnimation}>
-                <h4 text align="center">이 동네에 있는 회사네요!</h4>
+                <h4 text align="center">이 동네에 있는 회사네요!</h4><hr/>
                 <img src='img\map.png' alt="location"/>
                 <footer text align="center"><small><strong><mark>집 가까운 게</mark>최고죠!</strong></small></footer>  
             
@@ -194,25 +163,25 @@ const Detail = () => {
             
             {/* 평균연봉 삽입부*/}
             <animated.article id="averagesalary" style={averagesalaryAnimation}>
-                <h4 text align="center"><i>평균 연봉은 어느정도 될까?</i></h4>
+                <h4 text align="center"><i>평균 연봉은 어느정도 될까?</i></h4><hr/>
                 <img src='img\salary.png' alt="salary"/>
                 <footer text align="center"><small><strong>업계 평균은 <mark>빨간색</mark>이 회사는</strong><strong><mark>파란색!</mark></strong></small></footer>                  
             </animated.article>
           </div>
           <hr/>
 
-          {/* 넷째줄 */}
+          {/* 셋째줄 */}
           <div className='grid'>
             {/* 구성원비 삽입부 */}
             <animated.article id="genderratio" style={genderratioAnimation}>
-            <h4 text align="center">구성원의 성비는...?</h4>
+            <h4 text align="center">구성원의 성비는...?</h4><hr/>
                 <img src='img\sgraph.png' alt="genderratio"/>
                 <footer text align="center"><small><strong><mark>직원의 성비</mark>어떤 회사가 좋으세요?</strong></small></footer> 
             </animated.article>
 
             {/* 매출추세 삽입부 */}
             <animated.article id="salestrend" style={salestrendAnimation}>
-                <h4 text align="center">연도별 매출을 확인하세요!</h4>
+                <h4 text align="center">연도별 매출을 확인하세요!</h4><hr/>
                 <img src='img\salestrend.png' alt="salestrend"/>
                 <footer text align="center"><small><strong><mark>연도 별 매출 증감추세</mark></strong>를 확인하실 수 있어요.</small></footer>    
             </animated.article>
@@ -223,14 +192,14 @@ const Detail = () => {
           <div className='grid'>
             {/* 레이더차트 삽입부 */}
             <animated.article id="incomestate" style={incomestateAnimation}>
-                <h4 text align="center">재무 성향을 레이더로 시각화했어요!</h4>
+                <h4 text align="center">재무 성향을 레이더로 시각화했어요!</h4><hr/>
                 <img src='img\navien.png' alt="incomestate"/>
                 <footer text align="center"><small><strong><mark>안정성</mark>은 숫자가 작을수록 긍정적이라는 뜻이에요.</strong></small></footer>  
             </animated.article>
 
             {/* 복지별점 삽입부 */}
             <animated.article id="welfare" style={welfareAnimation}>
-                <h4 text align="center">복지만족도에 별점을 매겨봤어요 :)</h4>
+                <h4 text align="center">복지만족도에 별점을 매겨봤어요 :)</h4><hr/>
                 <img src='img\welfare.png' alt="welfare"/>
                 <footer text align="center"><small><strong><mark>워크넷 리뷰데이터</mark>를 참고했어요!</strong></small></footer>
             </animated.article>

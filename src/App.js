@@ -12,7 +12,7 @@ import Confirm from './components/Confirm';
 import AuthContext from './components/AuthContext';
 import EmailVerification from './components/EmailVerification'; 
 import TypeTest from './pages/TypeTest';
-
+import './KoreanFont.css';
 
 // Configure Amplify
 Auth.configure(awsconfig);
