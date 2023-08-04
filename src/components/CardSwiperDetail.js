@@ -29,8 +29,8 @@ const CardSwiperDetail = () => {
                 modules={[EffectCoverflow, Pagination, Mousewheel]}
     
             >
-                <SwiperSlide><img src='img/wordcloudtest3.png' alt="특징"/></SwiperSlide>
-                <SwiperSlide><img src='img/wordcloudtest3.png' alt="장점"/></SwiperSlide>
+                <SwiperSlide><img src='img/wctest1.png' alt="특징"/></SwiperSlide>
+                <SwiperSlide><img src='img/wctest123.png' alt="장점"/></SwiperSlide>
                 <SwiperSlide><img src='img/wordcloudtest3.png' alt="단점"/></SwiperSlide>
             </Swiper>
         </>

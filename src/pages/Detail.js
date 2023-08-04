@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import NavBar from "../components/NavBar";
 import { Link } from 'react-scroll';
 import { animated, useSpring } from 'react-spring';
-import CardSwiper2 from '../components/CardSwiperDetail';
+import CardSwiperDetail from '../components/CardSwiperDetail';
 
 const Detail = () => {
     const [searchInput, setSearchInput] = useState('');
@@ -163,7 +163,7 @@ const Detail = () => {
             {/* 총평 워드클라우드 삽입부 */}
             <animated.article id="wordcloud1" style={wordcloud1Animation}>
               <h4 text align="center">한 눈에 보는 이 기업 <mark>Keyword!</mark></h4><hr/>
-              <CardSwiper2 />
+              <CardSwiperDetail />
               <footer text align="center"><small><strong><mark>마우스 휠</mark>을 돌려 여러 특징을 확인하세요.</strong></small></footer>  
             </animated.article>
           </div>
@@ -218,8 +218,8 @@ const Detail = () => {
 
             {/* 복지별점 삽입부 */}
             <animated.article id="welfare" style={welfareAnimation}>
-                <h4 text align="center">복지만족도에 별점을 매겨봤어요 :)</h4><hr/>
-                <img src={starUrl} alt="Welfar"/>
+                <h4 text align="center">복지 만족도에 별점을 매겨봤어요 :)</h4><hr/>
+                <img src={starUrl} alt="Welfare"/>
                 <footer text align="center"><small><strong><mark>워크넷 리뷰데이터</mark>를 참고했어요!</strong></small></footer>
             </animated.article>
           </div>

@@ -145,7 +145,7 @@ const TypeTest = () => {
 
         {showResultButton ? (
           <button className='secondary'>
-            <Link to="/" style={{ color: 'white', textDecoration: 'none' }}> {/* 결과 보러가기 버튼에 결과 페이지 경로를 연결 */}
+            <Link to="/TestResult" style={{ color: 'white', textDecoration: 'none' }}> {/* 결과 보러가기 버튼에 결과 페이지 경로를 연결 */}
               <strong>결과 보러가기</strong>
             </Link>
           </button>
