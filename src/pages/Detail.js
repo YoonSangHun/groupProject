@@ -3,10 +3,18 @@ import axios from 'axios';
 import NavBar from "../components/NavBar";
 import { Link } from 'react-scroll';
 import { animated, useSpring } from 'react-spring';
-import CardSwiperDetail from '../components/CardSwiperDetail';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/effect-coverflow';
+import { Pagination, EffectCoverflow, Mousewheel } from 'swiper/modules';
+
+
 
 const Detail = () => {
     const [searchInput, setSearchInput] = useState('');
+    const [submittedSearch, setSubmittedSearch] = useState('');
     const [logoUrl, setLogoUrl] = useState('');
     const [pieChartUrl, setPieChartUrl] = useState('');
     const [radarChartUrl, setRadarChartUrl] = useState('');
@@ -14,9 +22,12 @@ const Detail = () => {
     const [predUrl, setPredUrl] = useState('');
     const [mapUrl, setMapUrl] = useState('');
     const [starUrl, setStarUrl] = useState('');
+    const [proUrl, setProUrl] = useState('');
+    const [conUrl, setConUrl] = useState('');
+    const [titleUrl, setTitleUrl] = useState('');
 
-    const fetchImageUrls = async (searchInput) => {
-        if (!searchInput) {
+    const fetchImageUrls = async (searchTerm) => {
+        if (!searchTerm) {
             return;  // If searchInput is an empty string, exit the function early.
         }
     
@@ -36,24 +47,28 @@ const Detail = () => {
             setPredUrl(data.pred_url);
             setMapUrl(data.map_url);
             setStarUrl(data.star_url);
+            setProUrl(data.pro_url);
+            setConUrl(data.con_url);
+            setTitleUrl(data.title_url);
     
         } catch (error) {
             console.error(`Error fetching image URLs: `, error);
         }
     };
-    
 
     const handleSearchSubmit = (e) => {
-        e.preventDefault();
+      e.preventDefault();
 
-        fetchImageUrls(searchInput)
-            .then((data) => {
-                console.log(data);
-            })
-            .catch((error) => {
-                console.error(`Error fetching image URLs: `, error);
-            });
-    };
+      setSubmittedSearch(searchInput); // Set the submittedSearch to the current value of searchInput
+      
+      fetchImageUrls(searchInput)
+          .then((data) => {
+              console.log(data);
+          })
+          .catch((error) => {
+              console.error(`Error fetching image URLs: `, error);
+          });
+  };
     // 여기부터 애니메이션 효과 정의
     const fadeInAnimation = useSpring({
         opacity: 1,
@@ -152,90 +167,118 @@ const Detail = () => {
               </form>
             </div>
           </animated.article><hr />
-          <div className="grid">
-            {/* 로고 삽입부 */}
-            <animated.article id="logo" style={logoAnimation}>
-              <h4 text align="center">About...</h4><hr/>
-              <img src={logoUrl} alt="logo"/>
-              <footer text align="center"><small><strong><mark>{ searchInput }</mark></strong>는요...!</small></footer>  
-            </animated.article>
 
-            {/* 총평 워드클라우드 삽입부 */}
-            <animated.article id="wordcloud1" style={wordcloud1Animation}>
-              <h4 text align="center">한 눈에 보는 이 기업 <mark>Keyword!</mark></h4><hr/>
-              <CardSwiperDetail />
-              <footer text align="center"><small><strong><mark>마우스 휠</mark>을 돌려 여러 특징을 확인하세요.</strong></small></footer>  
-            </animated.article>
-          </div>
-          <hr />
-
-          {/* 둘째줄 */}
-          <div className='grid'>
-            {/* 위치 정보 삽입부*/}
-            <animated.article id="location" style={locationAnimation}>
-                <h4 text align="center">이 동네에 있는 회사네요!</h4><hr/>
-                <img src={mapUrl} alt="Location"/>
-                <footer text align="center"><small><strong><mark>집 가까운 게</mark>최고죠!</strong></small></footer>  
+          {submittedSearch.length > 0 && (
+            <>
+              <div className="grid">
             
-            </animated.article>
-            {/* 구성원비 삽입부 */}
-            <animated.article id="genderratio" style={genderratioAnimation}>
-            <h4 text align="center">구성원의 성비는...?</h4><hr/>
-                <img src={pieChartUrl} alt="genderratio"/>
-                <footer text align="center"><small><strong><mark>직원의 성비</mark>어떤 회사가 좋으세요?</strong></small></footer> 
-            </animated.article>
-            
-          </div>
-          <hr/>
+                {/* 로고 삽입부 */}
+                <animated.article id="logo" style={logoAnimation}>
+                  <h4 text align="center">About...</h4><hr/>
+                  <img src={logoUrl} alt="logo"/>
+                  <footer text align="center"><small><strong><mark>{ searchInput }</mark></strong>는요...!</small></footer>  
+                </animated.article>
 
-          {/* 셋째줄 */}
-          <div className='grid'>
-            
-            {/* 평균연봉 삽입부*/}
-            <animated.article id="averagesalary" style={averagesalaryAnimation}>
-                <h4 text align="center"><i>평균 연봉은 어느정도 될까?</i></h4><hr/>
-                <img src={salUrl} alt="salary"/>
-                <footer text align="center"><small><strong>업계 평균은 <mark>빨간색</mark>이 회사는</strong><strong><mark>파란색!</mark></strong></small></footer>                  
-            </animated.article>
+                {/* 총평 워드클라우드 삽입부 */}
+                <animated.article id="wordcloud1" style={wordcloud1Animation}>
+                  <h4 text align="center">한 눈에 보는 이 기업 <mark>Keyword!</mark></h4><hr/>
+                  <Swiper
+                    effect={'coverflow'}
+                    mousewheel={true}
+                    grabCursor={true}
+                    loop={true}
+                    centeredSlides={true}
+                    slidesPerView={'auto'}
+                    coverflowEffect={{
+                      rotate: 100,
+                      stretch: 0,
+                      depth: 0,
+                      modifier: 1,
+                      slideShadows: true,
+                      overhidden: true,
+                    }}
+                    pagination={true}
+                    modules={[EffectCoverflow, Pagination, Mousewheel]}
+        
+                >
+                    <SwiperSlide><img src={titleUrl} alt="특징"/></SwiperSlide>
+                    <SwiperSlide><img src={proUrl} alt="장점"/></SwiperSlide>
+                    <SwiperSlide><img src={conUrl} alt="단점"/></SwiperSlide>
+                </Swiper>
+                  <footer text align="center"><small><strong><mark>마우스 휠</mark>을 돌려 여러 특징을 확인하세요.</strong></small></footer>  
+                </animated.article>
+              </div>
+              <hr />
 
-            {/* 매출추세 삽입부 */}
-            <animated.article id="salestrend" style={salestrendAnimation}>
-                <h4 text align="center">연도별 매출을 확인하세요!</h4><hr/>
-                <img src={predUrl} alt="salestrend"/>
-                <footer text align="center"><small><strong><mark>연도 별 매출 증감추세</mark></strong>를 확인하실 수 있어요.</small></footer>    
-            </animated.article>
-          </div>
-          <hr />
+              {/* 둘째줄 */}
+              <div className='grid'>
+                {/* 위치 정보 삽입부*/}
+                <animated.article id="location" style={locationAnimation}>
+                    <h4 text align="center">이 동네에 있는 회사네요!</h4><hr/>
+                    <img src={mapUrl} alt="Location"/>
+                    <footer text align="center"><small><strong><mark>집 가까운 게</mark>최고죠!</strong></small></footer>  
+                
+                </animated.article>
+                {/* 구성원비 삽입부 */}
+                <animated.article id="genderratio" style={genderratioAnimation}>
+                <h4 text align="center">구성원의 성비는...?</h4><hr/>
+                    <img src={pieChartUrl} alt="genderratio"/>
+                    <footer text align="center"><small><strong><mark>직원의 성비</mark>어떤 회사가 좋으세요?</strong></small></footer> 
+                </animated.article>
+                
+              </div>
+              <hr/>
 
-          {/* 마지막 줄 */}
-          <div className='grid'>
-            {/* 레이더차트 삽입부 */}
-            <animated.article id="incomestate" style={incomestateAnimation}>
-                <h4 text align="center">재무 성향을 레이더로 시각화했어요!</h4><hr/>
-                <img src={radarChartUrl} alt="incomestate"/>
-                <footer text align="center"><small><strong><mark>안정성</mark>은 숫자가 작을수록 긍정적이라는 뜻이에요.</strong></small></footer>  
-            </animated.article>
+              {/* 셋째줄 */}
+              <div className='grid'>
+                
+                {/* 평균연봉 삽입부*/}
+                <animated.article id="averagesalary" style={averagesalaryAnimation}>
+                    <h4 text align="center"><i>평균 연봉은 어느정도 될까?</i></h4><hr/>
+                    <img src={salUrl} alt="salary"/>
+                    <footer text align="center"><small><strong>업계 평균은 <mark>빨간색</mark>이 회사는</strong><strong><mark>파란색!</mark></strong></small></footer>                  
+                </animated.article>
 
-            {/* 복지별점 삽입부 */}
-            <animated.article id="welfare" style={welfareAnimation}>
-                <h4 text align="center">복지 만족도에 별점을 매겨봤어요 :)</h4><hr/>
-                <img src={starUrl} alt="Welfare"/>
-                <footer text align="center"><small><strong><mark>워크넷 리뷰데이터</mark>를 참고했어요!</strong></small></footer>
-            </animated.article>
-          </div>
-          <hr />
+                {/* 매출추세 삽입부 */}
+                <animated.article id="salestrend" style={salestrendAnimation}>
+                    <h4 text align="center">연도별 매출을 확인하세요!</h4><hr/>
+                    <img src={predUrl} alt="salestrend"/>
+                    <footer text align="center"><small><strong><mark>연도 별 매출 증감추세</mark></strong>를 확인하실 수 있어요.</small></footer>    
+                </animated.article>
+              </div>
+              <hr />
+
+              {/* 마지막 줄 */}
+              <div className='grid'>
+                {/* 레이더차트 삽입부 */}
+                <animated.article id="incomestate" style={incomestateAnimation}>
+                    <h4 text align="center">재무 성향을 레이더로 시각화했어요!</h4><hr/>
+                    <img src={radarChartUrl} alt="incomestate"/>
+                    <footer text align="center"><small><strong><mark>안정성</mark>은 숫자가 작을수록 긍정적이라는 뜻이에요.</strong></small></footer>  
+                </animated.article>
+
+                {/* 복지별점 삽입부 */}
+                <animated.article id="welfare" style={welfareAnimation}>
+                    <h4 text align="center">복지 만족도에 별점을 매겨봤어요 :)</h4><hr/>
+                    <img src={starUrl} alt="Welfare"/>
+                    <footer text align="center"><small><strong><mark>워크넷 리뷰데이터</mark>를 참고했어요!</strong></small></footer>
+                </animated.article>
+              </div>
+              <hr />
 
           {/* 버튼구역 */}
-          <div className="grid">
+              <div className="grid">
             {/* 맨 위로 버튼 */}
-            <div />
-            <Link to="main" smooth={true}>
-              <button className="primary outline">
-                <strong>맨 위로</strong>
-              </button>
-            </Link>
-            <div />
-          </div>
+                <div />
+                <Link to="main" smooth={true}>
+                  <button className="primary outline">
+                   <strong>맨 위로</strong>
+                 </button>
+                </Link>
+                <div />
+              </div>
+            </>
+          )}
         </animated.main>
       );
     }

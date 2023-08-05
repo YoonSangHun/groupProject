@@ -23,63 +23,63 @@ const Home = () => {
   const article1Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 2000, // article1은 이전 애니메이션 후 2초 딜레이 적용, 1.3초의 실행시간 적용
+    delay: 1000, // article1은 이전 애니메이션 후 2초 딜레이 적용, 1.3초의 실행시간 적용
     config: { duration: 1300 },
   });
 
   const article2Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 4000, // article2는 이전 애니메이션 후 2초 딜레이 적용
+    delay: 2700, // article2는 이전 애니메이션 후 2초 딜레이 적용
     config: { duration: 1300 },
   });
 
   const article3Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 6000, // article3은 이전 애니메이션 후 2초 딜레이 적용
+    delay: 4400, // article3은 이전 애니메이션 후 2초 딜레이 적용
     config: { duration: 1300 },
   });
 
   const article4Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 8000, // article4는 이전 애니메이션 후 2초 딜레이 적용
+    delay: 6100, // article4는 이전 애니메이션 후 2초 딜레이 적용
     config: { duration: 1300 },
   });
 
   const article5Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 10000, // article5는 이전 애니메이션 후 2초 딜레이 적용
+    delay: 7800, // article5는 이전 애니메이션 후 2초 딜레이 적용
     config: { duration: 1300 },
   });
 
   const article6Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 12000, // article6은 이전 애니메이션 후 2초 딜레이 적용
+    delay: 9500, // article6은 이전 애니메이션 후 2초 딜레이 적용
     config: { duration: 1300 },
   });
 
   const article7Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 14000, // article7은 이전 애니메이션 후 2초 딜레이 적용
+    delay:11200, // article7은 이전 애니메이션 후 2초 딜레이 적용
     config: { duration: 1300 },
   });
 
   const article8Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 16000, // article8은 이전 애니메이션 후 4.5초 딜레이 적용
+    delay: 12900, // article8은 이전 애니메이션 후 4.5초 딜레이 적용
     config: { duration: 1300 },
   });
 
   const article9Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 18000, // article9은 이전 애니메이션 후 4.5초 딜레이 적용
+    delay: 14600, // article9은 이전 애니메이션 후 4.5초 딜레이 적용
     config: { duration: 1300 },
   });
 
