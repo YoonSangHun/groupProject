@@ -21,7 +21,7 @@ const CardSwiper3 = () => {
                   rotate: 100,
                   stretch: 0,
                   depth: 0,
-                  modifier: 2,
+                  modifier: 1,
                   slideShadows: true,
                   overhidden: true,
                 }}
@@ -29,13 +29,12 @@ const CardSwiper3 = () => {
                 modules={[EffectCoverflow, Pagination,Mousewheel]}
     
             >
-                <SwiperSlide><img src='img/10.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
-                <SwiperSlide></SwiperSlide>
+                <SwiperSlide><img src='img/1지도.png' alt="mapdi"/></SwiperSlide>
+                <SwiperSlide><img src='img/2파이차트.png' alt="piechart"/></SwiperSlide>
+                <SwiperSlide><img src='img/3박스플롯.png' alt="boxfloat"/></SwiperSlide>
+                <SwiperSlide><img src='img/4예측그래프.png' alt="salestrend"/></SwiperSlide>
+                <SwiperSlide><img src='img/5레이더차트.png' alt="rardar"/></SwiperSlide>
+                <SwiperSlide><img src='img/6별점.png' alt="stars"/></SwiperSlide>
             </Swiper>
         </>
     );

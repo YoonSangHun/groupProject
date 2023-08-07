@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 import CardSwiper from "../components/CardSwiper";
 import CardSwiper2 from "../components/CardSwiper2";
 import CardSwiper3 from "../components/CardSwiper3";
-import CardSwiper4 from "../components/CardSwiper4";
 import { useNavigate } from "react-router-dom";
 import AuthContext from "../components/AuthContext";
 import { Link } from "react-scroll";
@@ -59,7 +58,7 @@ const Home = () => {
     opacity: 1,
     from: { opacity: 0 },
     delay: 12000, // article6은 이전 애니메이션 후 2초 딜레이 적용
-    config: { duration: 1300 },
+    config: { duration: 1000 },
   });
 
   const article7Animation = useSpring({
@@ -73,7 +72,7 @@ const Home = () => {
     opacity: 1,
     from: { opacity: 0 },
     delay: 16000, // article8은 이전 애니메이션 후 4.5초 딜레이 적용
-    config: { duration: 1300 },
+    config: { duration: 1000 },
   });
 
   const article9Animation = useSpring({
@@ -81,6 +80,13 @@ const Home = () => {
     from: { opacity: 0 },
     delay: 18000, // article9은 이전 애니메이션 후 4.5초 딜레이 적용
     config: { duration: 1300 },
+  });
+  
+  const article10Animation = useSpring({
+    opacity: 1,
+    from: { opacity: 0 },
+    delay: 20000, // article10은 이전 애니메이션 후 4.5초 딜레이 적용
+    config: { duration: 1000 },
   });
 
   const handleButtonClick = () => {
@@ -101,12 +107,12 @@ const Home = () => {
           <hgroup>
             <br />
             <h1 style={{ textAlign: "center" }}>
-              새로운 "구직 인사이트" 를 개발해보자!
+              새로운 " 구직 인사이트 " 를 제공해보자!
             </h1>
             <br />
             <h2 style={{ textAlign: "center" }}>
               <strong>
-                <i>UniCom은 <mark>AI 클러스터링, 기업데이터 분석, 시각화 기술</mark>을 주로 활용한 새로운 시도를 해보았어요!</i>
+                <i>" UniCom은 <mark>AI 클러스터링, 기업데이터 분석, 시각화 기술</mark>을 주로 활용한 새로운 시도를 해보았어요! "</i>
               </strong>
             </h2>
           </hgroup>
@@ -114,16 +120,16 @@ const Home = () => {
         <animated.article id="article2" style={article2Animation}>
           <hgroup><br/>
             <h1 style={{ textAlign: "center" }}>
-              "다녀보니 내가 생각했던 회사가 아니라서...?""
+              " 다녀보니 내가 생각했던 회사가 아니라서...? "
             </h1><br/><br/>
             <h3 style={{ textAlign: "center" }}>
               <strong>
-                <i>"회사에 <mark>지나친 환상</mark>을 가지고 시작했던 건 아닐까...?"</i>
+                <i>" 회사에 <mark>지나친 환상</mark> 을 가지고 시작했던 건 아닐까...? "</i>
               </strong>
             </h3><br/><br/>
             <h3 style={{ textAlign: "center" }}>
               <strong>
-                <i>"입사 전에 알았으면 더 좋았을 정보들...?"</i>
+                <i>" 입사 전에 알았으면 더 좋았을 <mark>정보</mark> 들이 뭐가있을까...? "</i>
               </strong>
             </h3>
           </hgroup>
@@ -132,7 +138,7 @@ const Home = () => {
           <hgroup>
             <br />
             <h1 style={{ textAlign: "center" }}>
-              "그렇게 시작했습니다."
+              " 저희는 그렇게 시작했습니다. "
             </h1>
             <br />
           </hgroup>
@@ -145,7 +151,7 @@ const Home = () => {
             </h1><br/><br/>
             <h4 style={{ textAlign: "center" }}>
               <strong>
-                <i><mark>새로운 분류</mark>를 끈기있게 시도한 끝에 얻어낸<br/> <mark>7가지 유형</mark>을 소개합니다.</i>
+                <i><mark>" 새로운 분류</mark>를 끈기있게 시도한 끝에 얻어낸<br/> <mark>7가지 유형</mark>을 소개합니다. "</i>
               </strong>
             </h4>
             <br />
@@ -155,11 +161,11 @@ const Home = () => {
           <hgroup>
             <br />
             <h1 style={{ textAlign: "center" }}>
-              "분류된 기업유형에는 재미있는 이름을 붙여 주었어요."
+              " 분류된 기업유형에는 재미있는 이름을 붙여 주었어요. "
             </h1><br/><br/>
             <h5 style={{ textAlign: "center" }}>
               <strong>
-                <i>"한 번쯤 경험하거나 상상해 본 적 있는 <mark>직장인</mark>들의 이미지"</i>
+                <i>" 한 번쯤 경험하거나 상상해 본 적 있는 <mark>직장인</mark>들의 이미지 "</i>
               </strong>
             </h5>
             <br />
@@ -169,13 +175,38 @@ const Home = () => {
           <CardSwiper />
         </animated.article>
         <animated.article id="article7" style={article7Animation}>
-          <CardSwiper2 />
+          <hgroup>
+            <br />
+            <h1 style={{ textAlign: "center" }}>
+              " 각 유형에 해당하는 기업들의 정보를 정리해보기도 했어요. "
+            </h1><br/><br/>
+            <h5 style={{ textAlign: "center" }}>
+              <strong>
+                <i>" 그래서 <mark>'내 유형찾기'</mark> 를 먼저하시길 권해드려요. "</i>
+              </strong>
+            </h5>
+            <br />
+          </hgroup>
         </animated.article>
         <animated.article id="article8" style={article8Animation}>
-          <CardSwiper3 />
+          <CardSwiper2 />
         </animated.article>
         <animated.article id="article9" style={article9Animation}>
-          <CardSwiper4 />
+          <hgroup>
+            <br />
+            <h1 style={{ textAlign: "center" }}>
+              " 아래 리스트와 같은 각 기업의 정보들도 알아보기 쉽게 시각화했어요. "
+            </h1><br/><br/>
+            <h5 style={{ textAlign: "center" }}>
+              <strong>
+                <i>" 이제 <mark>회원가입</mark> 을 통해 <mark>UniCom</mark> 을 시작하세요! "</i>
+              </strong>
+            </h5>
+            <br />
+          </hgroup>
+        </animated.article>
+        <animated.article id="article10" style={article10Animation}>
+          <CardSwiper3 />
         </animated.article>
       </header>
       <div className="grid">
@@ -186,7 +217,7 @@ const Home = () => {
           </button>
         </Link>
         <button className="primary" onClick={handleButtonClick}>
-          <strong>내 기업유형 찾기 →</strong>
+          <strong>UniCom 시작하기</strong>
         </button>
 
         <div />

@@ -133,7 +133,7 @@ const Detail = () => {
           <animated.article id="article1" style={article1Animation}>
             <hgroup>
               <br/>
-              <h1 text align="center">"UniCom!  <mark>{ searchInput || '0 0 0 0' }</mark> 은(는) 어떤 기업이죠?</h1><br/>
+              <h1 text align="center">"UniCom!  <mark>{ searchInput || '○○○○' }</mark> 은(는) 어떤 기업이죠?</h1><br/>
               <h2 text align="center">
                 <strong>원하는 기업의 여러 정보를 확인하실 수 있는 페이지에요!</strong>
               </h2>
@@ -173,16 +173,16 @@ const Detail = () => {
           <div className='grid'>
             {/* 위치 정보 삽입부*/}
             <animated.article id="location" style={locationAnimation}>
-                <h4 text align="center">이 동네에 있는 회사네요!</h4><hr/>
+                <h4 text align="center">" 출 퇴근이 쉬워야 할텐데! "</h4><hr/>
                 <img src={mapUrl} alt="Location"/>
                 <footer text align="center"><small><strong><mark>집 가까운 게</mark>최고죠!</strong></small></footer>  
             
             </animated.article>
             {/* 구성원비 삽입부 */}
             <animated.article id="genderratio" style={genderratioAnimation}>
-            <h4 text align="center">구성원의 성비는...?</h4><hr/>
+            <h4 text align="center">" 구성원의 성비는...? "</h4><hr/>
                 <img src={pieChartUrl} alt="genderratio"/>
-                <footer text align="center"><small><strong><mark>직원의 성비</mark>어떤 회사가 좋으세요?</strong></small></footer> 
+                <footer text align="center"><small><strong><mark>파이차트</mark>로 확인하는 남녀성비</strong></small></footer> 
             </animated.article>
             
           </div>
@@ -193,16 +193,16 @@ const Detail = () => {
             
             {/* 평균연봉 삽입부*/}
             <animated.article id="averagesalary" style={averagesalaryAnimation}>
-                <h4 text align="center"><i>평균 연봉은 어느정도 될까?</i></h4><hr/>
+                <h4 text align="center">" 평균 연봉은 어느정도 될까? "</h4><hr/>
                 <img src={salUrl} alt="salary"/>
                 <footer text align="center"><small><strong>업계 평균은 <mark>빨간색</mark>이 회사는</strong><strong><mark>파란색!</mark></strong></small></footer>                  
             </animated.article>
 
             {/* 매출추세 삽입부 */}
             <animated.article id="salestrend" style={salestrendAnimation}>
-                <h4 text align="center">연도별 매출을 확인하세요!</h4><hr/>
+                <h4 text align="center">" 회사가 오래오래 잘 될까...? "</h4><hr/>
                 <img src={predUrl} alt="salestrend"/>
-                <footer text align="center"><small><strong><mark>연도 별 매출 증감추세</mark></strong>를 확인하실 수 있어요.</small></footer>    
+                <footer text align="center"><small><strong><mark>연도 별 매출 증감추세</mark>와 예상된 매출액이에요.</strong></small></footer>    
             </animated.article>
           </div>
           <hr />
@@ -211,14 +211,14 @@ const Detail = () => {
           <div className='grid'>
             {/* 레이더차트 삽입부 */}
             <animated.article id="incomestate" style={incomestateAnimation}>
-                <h4 text align="center">재무 성향을 레이더로 시각화했어요!</h4><hr/>
+                <h4 text align="center">" 레이더 차트로 확인하는 <mark>회사의 방향성</mark> "</h4><hr/>
                 <img src={radarChartUrl} alt="incomestate"/>
                 <footer text align="center"><small><strong><mark>안정성</mark>은 숫자가 작을수록 긍정적이라는 뜻이에요.</strong></small></footer>  
             </animated.article>
 
             {/* 복지별점 삽입부 */}
             <animated.article id="welfare" style={welfareAnimation}>
-                <h4 text align="center">복지 만족도에 별점을 매겨봤어요 :)</h4><hr/>
+                <h4 text align="center">" 직원들의 복지 만족도는 어떨까...? "</h4><hr/>
                 <img src={starUrl} alt="Welfare"/>
                 <footer text align="center"><small><strong><mark>워크넷 리뷰데이터</mark>를 참고했어요!</strong></small></footer>
             </animated.article>

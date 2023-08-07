@@ -29,13 +29,13 @@ const CardSwiper2 = () => {
                 modules={[EffectCoverflow, Pagination,Mousewheel]}
     
             >
-                <SwiperSlide><img src='img/0번_두산_여유.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/1번_오뚜기_꼼꼼한.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/2번_JW중외제약_의욕과다.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/3번_코웨이_안전제일.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/4번_SK가스_다재다능.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/5번_경동나비엔_성장하는.jpg' alt="type"/></SwiperSlide>
-                <SwiperSlide><img src='img/6번_유니드_팔방미인.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/0번_3개_여유_900X700.jpg' alt="ha"/></SwiperSlide>
+                <SwiperSlide><img src='img/1번_3개_여유_900X700.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/2번_3개_의욕과다_900X700.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/3번_3개_안전제일_900X700.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/4번_3개_다재다능_900X700.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/5번_3개_성장하는_900X700.jpg' alt="type"/></SwiperSlide>
+                <SwiperSlide><img src='img/6번_3개_팔방미인_900X700.jpg' alt="type"/></SwiperSlide>
             </Swiper>
         </>
     );

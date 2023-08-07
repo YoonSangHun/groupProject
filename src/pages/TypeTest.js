@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from '../components/NavBar';
 import { animated, config, useSpring } from 'react-spring';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const questions = [
@@ -95,7 +95,7 @@ const TypeTest = () => {
       setShowResultButton(false);
     }
   };
-
+  const navigate = useNavigate();
   const handleNextQuestion = () => {
     if (selectedOption) {
       if (currentQuestionIndex + 1 < questions.length) {
@@ -105,6 +105,16 @@ const TypeTest = () => {
       } else {
         setShowResultButton(true); // 마지막 질문일 때 "결과 보러가기" 버튼 보이기
       }
+    }
+  };
+
+  const handleResultButton = () => {
+    if (selectedOption === questions[6].options[0]) {
+      // 마지막 질문에 옵션 1이 선택되었다면, TestResult1 페이지로 이동합니다.
+      navigate('/TestResult');
+    } else if (selectedOption === questions[6].options[1]) {
+      // 마지막 질문에 옵션 2가 선택되었다면, TestResult 페이지로 이동합니다.
+      navigate('/TestResult2');
     }
   };
 
@@ -144,10 +154,10 @@ const TypeTest = () => {
         </button>
 
         {showResultButton ? (
-          <button className='secondary'>
-            <Link to="/TestResult" style={{ color: 'white', textDecoration: 'none' }}> {/* 결과 보러가기 버튼에 결과 페이지 경로를 연결 */}
+          <button className='secondary' onClick={handleResultButton}>
+            
               <strong>결과 보러가기</strong>
-            </Link>
+            
           </button>
         ) : (
           <button onClick={handleNextQuestion}>
@@ -160,4 +170,3 @@ const TypeTest = () => {
 };
 
 export default TypeTest;
-

@@ -51,8 +51,8 @@ const Login = () => {
         <Link to="/"><div aria-label="Close" className="close"></div></Link>
         <div>
           <hgroup>
-            <h1>로그인</h1><hr/><br/>
-            <h2><i>로그인 먼저 해주세요 :)</i></h2>
+            <h1>로그인</h1><hr/><br/><br/>
+            <h2>로그인 해주세요 :)</h2>
           </hgroup>
 
           <div>

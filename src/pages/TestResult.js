@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 import { useState } from "react";
 import { useEffect } from "react";
 
 
-const TestResult2 = () => {
+const TestResult = () => {
     const fadeAnimation = useSpring({
         opacity: 1,
         transform: 'translateY(0)',
@@ -26,8 +26,8 @@ const TestResult2 = () => {
       const resultimageAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 5000, // resultimage는 이전 애니메이션 후 4초 딜레이 적용, 1.3초의 실행시간 적용
-        config: { duration: 1800 },
+        delay: 4500, // resultimage는 이전 애니메이션 후 4초 딜레이 적용, 1.3초의 실행시간 적용
+        config: { duration: 1700 },
     });
 
     const companiesAnimation = useSpring({
@@ -76,18 +76,18 @@ const TestResult2 = () => {
                 </animated.article>
                 {/* 결과에 맞는 이미지 출력 */}
                 <animated.article id="resultimage" style={resultimageAnimation}>
-                  <img src="img/설문조사결과_안전제일정대리.png" 
+                  <img src="img/설문조사결과_팔방미인유부장.png" 
                        alt="유부장"
                        style={{
-                           display: 'block', // 이미지를 블록 요소로 변경하여 가로 중앙 정렬을 적용합니다.
-                           margin: '0 auto', // 가로 중앙 정렬을 위해 왼쪽과 오른쪽에 자동 마진을 설정합니다.
-                           maxWidth: '100%', // 이미지의 최대 너비를 100%로 설정하여 부모 요소의 너비에 맞추도록 합니다.
+                           display: 'block', // 이미지를 블록 요소로 변경하여 가로 중앙 정렬을 적용.
+                           margin: '0 auto', // 가로 중앙 정렬을 위해 왼쪽과 오른쪽에 자동 마진을 설정.
+                           maxWidth: '100%', // 이미지의 최대 너비를 100%로 설정하여 부모 요소너비에 맞춤적용.
                 }} />
                 </animated.article>
             
                 <animated.article id="companies" style={companiesAnimation}>
-                  <h4> <br/>
-                      유니드, 유니드, 유니드, 유니드, 삼성전자
+                  <h4 style={{ textAlign:"center" }}> <br/>
+                      <mark>유니드</mark>, <mark>하이트진로</mark>, <mark>강원랜드</mark>
                   </h4>
                 </animated.article>
                 <div className="grid">
@@ -107,4 +107,4 @@ const TestResult2 = () => {
     )
 };
 
-export default TestResult2;
+export default TestResult;

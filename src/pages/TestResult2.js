@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import { animated, useSpring } from "react-spring";
-import NavBar from "./NavBar";
+import NavBar from "../components/NavBar";
 import { useState } from "react";
 import { useEffect } from "react";
 
 
-const TestResult = () => {
+const TestResult2 = () => {
     const fadeAnimation = useSpring({
         opacity: 1,
         transform: 'translateY(0)',
@@ -26,8 +26,8 @@ const TestResult = () => {
       const resultimageAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 5000, // resultimage는 이전 애니메이션 후 4초 딜레이 적용, 1.3초의 실행시간 적용
-        config: { duration: 1800 },
+        delay: 4500, // resultimage는 이전 애니메이션 후 4초 딜레이 적용, 1.3초의 실행시간 적용
+        config: { duration: 1700 },
     });
 
     const companiesAnimation = useSpring({
@@ -76,7 +76,7 @@ const TestResult = () => {
                 </animated.article>
                 {/* 결과에 맞는 이미지 출력 */}
                 <animated.article id="resultimage" style={resultimageAnimation}>
-                  <img src="img/설문조사결과_팔방미인유부장.png" 
+                  <img src="img/설문조사결과_안전제일정대리.png" 
                        alt="유부장"
                        style={{
                            display: 'block', // 이미지를 블록 요소로 변경하여 가로 중앙 정렬을 적용합니다.
@@ -86,8 +86,8 @@ const TestResult = () => {
                 </animated.article>
             
                 <animated.article id="companies" style={companiesAnimation}>
-                  <h4> <br/>
-                      유니드, 유니드, 유니드, 유니드, 삼성전자
+                  <h4 style={{ textAlign:"center" }}> <br/>
+                      <mark>아난티</mark>, <mark>아모레퍼시픽</mark>, <mark>코웨이</mark>
                   </h4>
                 </animated.article>
                 <div className="grid">
@@ -107,4 +107,4 @@ const TestResult = () => {
     )
 };
 
-export default TestResult;
+export default TestResult2;

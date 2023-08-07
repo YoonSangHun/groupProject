@@ -53,13 +53,13 @@ const SignUp = () => {
         <Link to="/"><div aria-label="Close" className="close"></div></Link>
         <div>
           <hgroup>
-            <h1>Sign Up</h1>
-            <h2>회원가입을 진행해주세요</h2>
+            <h1>Sign Up</h1><br/><br/>
+            <h2>회원가입을 먼저 진행해주세요 :)</h2>
           </hgroup>
           <input value={username} onChange={e => setUsername(e.target.value)} placeholder="사용하실 ID" />
           <input value={password} type="password" onChange={e => setPassword(e.target.value)} placeholder="비밀번호" />
           <input value={email} onChange={e => setEmail(e.target.value)} placeholder="메일주소" />
-          <input value={name} onChange={e => setName(e.target.value)} placeholder="이름" />
+          <input value={name} onChange={e => setName(e.target.value)} placeholder="성함" />
           <input value={birth} onChange={e => setAge(e.target.value)} placeholder="생년 (끝 두자리만 입력해주세요! ex) 95, 97, 99" />
           <input value={address} onChange={e => setAddress(e.target.value)} placeholder="주소" />
           <button onClick={handleSignUp}>회원가입</button>
