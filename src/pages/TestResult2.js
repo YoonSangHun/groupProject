@@ -3,9 +3,36 @@ import { animated, useSpring } from "react-spring";
 import NavBar from "../components/NavBar";
 import { useState } from "react";
 import { useEffect } from "react";
+import axios from "axios";
 
 
 const TestResult2 = () => {
+    
+    // 기업 정보를 담을 상태 변수
+    const [companies, setCompanies] = useState([]);
+  
+    // useEffect를 사용하여 컴포넌트가 마운트되면 한 번만 실행되는 비동기 함수를 정의합니다.
+    useEffect(() => {
+      // API에서 기업 정보를 가져오는 함수를 호출합니다.
+      const fetchCompanies = async () => {
+        try {
+          // API 요청을 보내고 응답 데이터에서 기업 정보를 추출합니다.
+          const response = await axios.get(
+            "https://g39725izal.execute-api.eu-north-1.amazonaws.com/stage1/corp"
+          );
+          const companiesData = response.data;
+          
+          // 기업 정보를 상태 변수에 설정합니다.
+          setCompanies(companiesData);
+        } catch (error) {
+          console.error("Error fetching companies:", error.message);
+        }
+      };
+    
+      // fetchCompanies 함수를 실행합니다.
+      fetchCompanies();
+    }, []);
+      
     const fadeAnimation = useSpring({
         opacity: 1,
         transform: 'translateY(0)',
@@ -84,12 +111,20 @@ const TestResult2 = () => {
                            maxWidth: '100%', // 이미지의 최대 너비를 100%로 설정하여 부모 요소의 너비에 맞추도록 합니다.
                 }} />
                 </animated.article>
-            
+                
+                {/* 해당기업 서머리 */}
                 <animated.article id="companies" style={companiesAnimation}>
-                  <h4 style={{ textAlign:"center" }}> <br/>
-                      <mark>아난티</mark>, <mark>아모레퍼시픽</mark>, <mark>코웨이</mark>
-                  </h4>
+                  <details>
+                    <summary style={ { textAlign:"center"}}><strong><mark>Click</mark> 하여 기업리스트 확인</strong><br/><br/>(리스트를 복사해두셨다가 <mark>상세정보 검색</mark>에 활용하시면 편해요!)</summary>
+                      <h5 style={{ textAlign:"center" }}>
+                        <br/>
+                        {companies.map((company, index) => (
+                        <mark key={index}>{company.corp_name}</mark>
+                        ))}
+                      </h5>
+                  </details>
                 </animated.article>
+                
                 <div className="grid">
                   <Link to = "/TypeTest">
                       <button className="secondary outline">

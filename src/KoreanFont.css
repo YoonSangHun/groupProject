@@ -7,7 +7,7 @@
   }
   
   /* 폰트를 사용할 요소에 스타일 적용 */
-  h1, h2, h3, h4, h5, article, button, ul, li {
+  h1, h2, h3, h4, h5, h6, article, button, ul, li {
     font-family: 'NanumSquareNeo-Variable', sans-serif;
   }
   
