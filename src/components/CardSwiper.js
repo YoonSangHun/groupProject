@@ -16,7 +16,7 @@ const CardSwiper = () => {
                 grabCursor={true}
                 loop={true}
                 centeredSlides={true}
-                slidesPerView={'auto'}
+                slidesPerView={'1'}
                 coverflowEffect={{
                   rotate: 100,
                   stretch: 0,

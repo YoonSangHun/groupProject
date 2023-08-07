@@ -1,9 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from 'react';
 import '@picocss/pico/css/pico.min.css';
 import { animated, useSpring } from "react-spring";
 
 const MyPage = () => {
+  const navigate = useNavigate();
+  const handleReset = () => {
+    navigate('./Confirm');
+  }
+
 
   // 애니메이션용 state와 설정
   const [showForm, setShowForm] = React.useState(false);
@@ -27,7 +32,7 @@ const MyPage = () => {
         </hgroup><br/>
         <form>
           <div className='grid'>
-            <Link to="Confirm"><button className='secondary'>검사정보 Reset</button></Link>
+            <button onClick={handleReset} className='secondary'>검사정보 Reset</button>
           </div>
         </form>
       </animated.article>

@@ -195,11 +195,11 @@ const Home = () => {
           <hgroup>
             <br />
             <h1 style={{ textAlign: "center" }}>
-              " 아래 리스트와 같은 각 기업의 정보들도 알아보기 쉽게 시각화했어요. "
+              " 다양한 데이터를 수집하고 분석후<br/>쉽게 알아보실 수 있게 시각화했어요. "
             </h1><br/><br/>
             <h5 style={{ textAlign: "center" }}>
               <strong>
-                <i>" 이제 <mark>회원가입</mark> 을 통해 <mark>UniCom</mark> 을 시작하세요! "</i>
+                <i>" 이제 <mark>회원가입</mark> 진행 후 <mark>UniCom</mark> 을 시작하세요! "</i>
               </strong>
             </h5>
             <br />
@@ -217,7 +217,7 @@ const Home = () => {
           </button>
         </Link>
         <button className="primary" onClick={handleButtonClick}>
-          <strong>UniCom 시작하기</strong>
+          <strong>내 유형찾기</strong>
         </button>
 
         <div />

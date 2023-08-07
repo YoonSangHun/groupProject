@@ -1,9 +1,21 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from 'react';
 import '@picocss/pico/css/pico.min.css';
 import { animated, useSpring } from "react-spring";
 
 const Confirm = () => {
+
+  const navigate = useNavigate();
+  // 취소 버튼 클릭 시 "/" 경로로 이동하는 핸들러 함수
+  const handleCancel = () => {
+    navigate("/");
+  };
+
+  // 확인 버튼 클릭 시 "/" 경로로 이동하는 핸들러 함수
+  const handleConfirm = () => {
+    navigate("/");
+    alert("검사결과가 Reset되었습니다");
+  };
 
   // 애니메이션용 state와 설정
   const [showForm, setShowForm] = React.useState(false);
@@ -23,8 +35,8 @@ const Confirm = () => {
         <h3>정말 Reset하시겠습니까?</h3>
         <p>'확인' 을 누르면 검사한 정보의 초기화가 진행돼요!</p>
         <footer>
-          <Link to="/MyPage"><button className="secondary outline">취소</button></Link>
-          <Link to ="/"><button className="secondary">확인</button></Link>
+          <button onClick={handleCancel} className="secondary outline">취소</button>
+          <button onClick={handleConfirm} className="secondary">확인</button>
         </footer>
       </animated.article>
     </dialog>

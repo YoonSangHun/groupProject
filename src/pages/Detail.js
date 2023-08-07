@@ -261,7 +261,7 @@ const Detail = () => {
             <animated.article id="welfare" style={welfareAnimation}>
                 <h4 text align="center">" 직원들의 복지 만족도는 어떨까...? "</h4><hr/>
                 <img src={starUrl} alt="Welfare"/><br/><br/>
-                <footer text align="center"><small><strong><mark>워크넷 리뷰데이터</mark>를 참고했어요!</strong></small></footer>
+                <footer text align="center"><small><strong>워크넷에서 <mark>복지정보 데이터</mark> 를 가져왔어요!</strong></small></footer>
             </animated.article>
           </div>
           <hr />

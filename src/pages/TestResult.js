@@ -124,7 +124,7 @@ const TestResult = () => {
                         <br/>
                         <mark>{/* corpNames 데이터 출력 */}
                         {corpNames.map((corpName, index) => (
-                        <span key={index}>{corpName}<br/></span>
+                        <span key={index}>{corpName}<br/><br/></span>
                         ))}
                         </mark>
                       </h5>
