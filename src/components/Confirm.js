@@ -21,10 +21,10 @@ const Confirm = () => {
     <dialog open>
       <animated.article style={formAnimation}>
         <h3>정말 Reset하시겠습니까?</h3>
-        <p>'확인' 을 누르면 검사한 정보의 초기화가 진행돼요! (기능을 준비중입니다.)</p>
+        <p>'확인' 을 누르면 검사한 정보의 초기화가 진행돼요!</p>
         <footer>
           <Link to="/MyPage"><button className="secondary outline">취소</button></Link>
-          <button className="secondary">확인</button>
+          <Link to ="/"><button className="secondary">확인</button></Link>
         </footer>
       </animated.article>
     </dialog>

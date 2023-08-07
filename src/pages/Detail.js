@@ -176,7 +176,7 @@ const Detail = () => {
                 <animated.article id="logo" style={logoAnimation}>
                   <h4 text align="center">About...</h4><hr/>
                   <img src={logoUrl} alt="logo"/>
-                  <footer text align="center"><small><strong><mark>{ searchInput }</mark></strong>는요...!</small></footer>  
+                  <footer text align="center"><small><strong><mark>{ searchInput }</mark></strong>은(는)요...!</small></footer>  
                 </animated.article>
 
                 {/* 총평 워드클라우드 삽입부 */}
@@ -236,7 +236,7 @@ const Detail = () => {
             <animated.article id="averagesalary" style={averagesalaryAnimation}>
                 <h4 text align="center">" 평균 연봉은 어느정도 될까? "</h4><hr/>
                 <img src={salUrl} alt="salary"/>
-                <footer text align="center"><small><strong>업계 평균은 <mark>빨간색</mark>이 회사는</strong><strong><mark>파란색!</mark></strong></small></footer>                  
+                <footer text align="center"><small><strong>업계 평균은 <mark>초록색!</mark>이 회사는</strong><strong><mark>파란색!</mark></strong></small></footer>                  
             </animated.article>
 
             {/* 매출추세 삽입부 */}

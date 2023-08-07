@@ -23,7 +23,7 @@ const MyPage = () => {
         <Link to="/"><div aria-label="Close" className="close"></div></Link>
         <hgroup>
           <h1>내 정보</h1><hr/><br/><br/>
-          <h2><strong><mark>검사결과</mark>를 초기화 할 수 있어요! (아직은 준비중인 기능입니다)</strong></h2>
+          <h2><strong><mark>'내 유형찾기'의 검사결과</mark> 를 초기화 할 수 있어요!</strong></h2>
         </hgroup><br/>
         <form>
           <div className='grid'>
