@@ -86,57 +86,57 @@ const Detail = () => {
       const logoAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 1500,
-        config: { duration: 500 },
+        delay: 2000,
+        config: { duration: 1000 },
       });
     
       const wordcloud1Animation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 2500,
-        config: { duration: 500 },
+        delay: 3500,
+        config: { duration: 1000 },
       });
 
       const locationAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 5500,
-        config: { duration: 500 },
-      });
-
-      const averagesalaryAnimation = useSpring({
-        opacity: 1,
-        from: { opacity: 0 },
-        delay: 6500,
-        config: { duration: 500 },
+        delay: 6000,
+        config: { duration: 1000 },
       });
 
       const genderratioAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
         delay: 7500,
-        config: { duration: 500 },
+        config: { duration: 1000 },
+      });
+
+      const averagesalaryAnimation = useSpring({
+        opacity: 1,
+        from: { opacity: 0 },
+        delay: 9000,
+        config: { duration: 1000 },
       });
 
       const salestrendAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 8500,
-        config: { duration: 500 },
+        delay: 10500,
+        config: { duration: 1000 },
       });
 
       const incomestateAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 9500,
-        config: { duration: 500 },
+        delay: 12000,
+        config: { duration: 1000 },
       });
 
       const welfareAnimation = useSpring({
         opacity: 1,
         from: { opacity: 0 },
-        delay: 10500,
-        config: { duration: 500 },
+        delay: 13500,
+        config: { duration: 1000 },
       });
     //   여기까지 애니메이션 효과 정의
  
@@ -183,28 +183,28 @@ const Detail = () => {
                 <animated.article id="wordcloud1" style={wordcloud1Animation}>
                   <h4 text align="center">한 눈에 보는 이 기업 <mark>Keyword!</mark></h4><hr/>
                   <Swiper
-                    effect={'coverflow'}
-                    mousewheel={true}
-                    grabCursor={true}
-                    loop={true}
-                    centeredSlides={true}
-                    slidesPerView={'auto'}
-                    coverflowEffect={{
-                      rotate: 100,
-                      stretch: 0,
-                      depth: 0,
-                      modifier: 1,
-                      slideShadows: true,
-                      overhidden: true,
-                    }}
-                    pagination={true}
-                    modules={[EffectCoverflow, Pagination, Mousewheel]}
-        
-                >
-                    <SwiperSlide><img src={titleUrl} alt="특징"/></SwiperSlide>
-                    <SwiperSlide><img src={proUrl} alt="장점"/></SwiperSlide>
-                    <SwiperSlide><img src={conUrl} alt="단점"/></SwiperSlide>
-                </Swiper>
+                      effect={'coverflow'}
+                      mousewheel={true}
+                      grabCursor={true}
+                      loop={true}
+                      centeredSlides={true}
+                      slidesPerView={'auto'}
+                      coverflowEffect={{
+                        rotate: 100,
+                        stretch: 0,
+                        depth: 0,
+                        modifier: 1,
+                        slideShadows: true,
+                        overhidden: true,
+                      }}
+                      pagination={true}
+                      modules={[EffectCoverflow, Pagination, Mousewheel]}
+                    
+                > 
+                      <SwiperSlide><img src={titleUrl} alt="특징"/></SwiperSlide>
+                      <SwiperSlide><img src={proUrl} alt="장점"/></SwiperSlide>
+                      <SwiperSlide><img src={conUrl} alt="단점"/></SwiperSlide>
+                  </Swiper>
                   <footer text align="center"><small><strong><mark>마우스 휠</mark>을 돌려 여러 특징을 확인하세요.</strong></small></footer>  
                 </animated.article>
               </div>
@@ -253,14 +253,14 @@ const Detail = () => {
             {/* 레이더차트 삽입부 */}
             <animated.article id="incomestate" style={incomestateAnimation}>
                 <h4 text align="center">" 레이더 차트로 확인하는 <mark>회사의 방향성</mark> "</h4><hr/>
-                <img src={radarChartUrl} alt="incomestate"/>
+                <img src={radarChartUrl} alt="incomestate"/><br/><br/>
                 <footer text align="center"><small><strong><mark>안정성</mark>은 숫자가 작을수록 긍정적이라는 뜻이에요.</strong></small></footer>  
             </animated.article>
 
             {/* 복지별점 삽입부 */}
             <animated.article id="welfare" style={welfareAnimation}>
                 <h4 text align="center">" 직원들의 복지 만족도는 어떨까...? "</h4><hr/>
-                <img src={starUrl} alt="Welfare"/>
+                <img src={starUrl} alt="Welfare"/><br/><br/>
                 <footer text align="center"><small><strong><mark>워크넷 리뷰데이터</mark>를 참고했어요!</strong></small></footer>
             </animated.article>
           </div>
@@ -279,7 +279,9 @@ const Detail = () => {
               </div>
             </>
           )}
+          <hr/><hr/><hr/>
         </animated.main>
+        
       );
     }
     

@@ -22,71 +22,71 @@ const Home = () => {
   const article1Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 1000, // article1은 이전 애니메이션 후 2초 딜레이 적용, 1.3초의 실행시간 적용
-    config: { duration: 1300 },
+    delay: 1500, // article1은 이전 애니메이션 후 2초 딜레이 적용, 1.3초의 실행시간 적용
+    config: { duration: 1200 },
   });
 
   const article2Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 2700, // article2는 이전 애니메이션 후 2초 딜레이 적용
-    config: { duration: 1300 },
+    delay: 3000, // article2는 이전 애니메이션 후 2초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const article3Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 4400, // article3은 이전 애니메이션 후 2초 딜레이 적용
-    config: { duration: 1300 },
+    delay: 4600, // article3은 이전 애니메이션 후 2초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const article4Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 6100, // article4는 이전 애니메이션 후 2초 딜레이 적용
-    config: { duration: 1300 },
+    delay: 6400, // article4는 이전 애니메이션 후 2초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const article5Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 7800, // article5는 이전 애니메이션 후 2초 딜레이 적용
-    config: { duration: 1300 },
+    delay: 8200, // article5는 이전 애니메이션 후 2초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const article6Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 9500, // article6은 이전 애니메이션 후 2초 딜레이 적용
-    config: { duration: 1300 },
+    delay: 10000, // article6은 이전 애니메이션 후 2초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const article7Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay:11200, // article7은 이전 애니메이션 후 2초 딜레이 적용
-    config: { duration: 1300 },
+    delay:11800, // article7은 이전 애니메이션 후 2초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const article8Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 12900, // article8은 이전 애니메이션 후 4.5초 딜레이 적용
-    config: { duration: 1300 },
+    delay: 13600, // article8은 이전 애니메이션 후 4.5초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const article9Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 14600, // article9은 이전 애니메이션 후 4.5초 딜레이 적용
-    config: { duration: 1300 },
+    delay: 15400, // article9은 이전 애니메이션 후 4.5초 딜레이 적용
+    config: { duration: 1200 },
   });
   
   const article10Animation = useSpring({
     opacity: 1,
     from: { opacity: 0 },
-    delay: 20000, // article10은 이전 애니메이션 후 4.5초 딜레이 적용
-    config: { duration: 1000 },
+    delay: 17200, // article10은 이전 애니메이션 후 4.5초 딜레이 적용
+    config: { duration: 1200 },
   });
 
   const handleButtonClick = () => {
@@ -221,7 +221,7 @@ const Home = () => {
         </button>
 
         <div />
-      </div>
+      </div><hr/><hr/><hr/>
     </animated.main>
   );
 };

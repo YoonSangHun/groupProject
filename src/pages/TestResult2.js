@@ -7,32 +7,36 @@ import axios from "axios";
 
 
 const TestResult2 = () => {
-    
-    // 기업 정보를 담을 상태 변수
-    const [companies, setCompanies] = useState([]);
-  
-    // useEffect를 사용하여 컴포넌트가 마운트되면 한 번만 실행되는 비동기 함수를 정의합니다.
+    // 데이터 요청 후 저장할 상태 변수
+    const [corpNames, setCorpNames] = useState([]);
+
+    // useEffect를 활용하여 API 호출 및 데이터 저장
     useEffect(() => {
-      // API에서 기업 정보를 가져오는 함수를 호출합니다.
-      const fetchCompanies = async () => {
+      // API 요청 함수 (쿼리 파라미터로 cluster 값을 전달)
+      const fetchData = async () => {
         try {
-          // API 요청을 보내고 응답 데이터에서 기업 정보를 추출합니다.
           const response = await axios.get(
-            "https://g39725izal.execute-api.eu-north-1.amazonaws.com/stage1/corp"
+            "https://g39725izal.execute-api.eu-north-1.amazonaws.com/stage1/getlistcluster",
+            {
+              params: {
+                cluster: 3, // 적절한 cluster 값을 전달
+              },
+              responseType: "json",
+            }
           );
-          const companiesData = response.data;
-          
-          // 기업 정보를 상태 변수에 설정합니다.
-          setCompanies(companiesData);
+
+          // 응답에서 corp_name 데이터 추출하여 상태 변수에 저장
+          const data = response.data;
+          const corpNamesData = data.map((item) => item.corp_name);
+          setCorpNames(corpNamesData);
         } catch (error) {
-          console.error("Error fetching companies:", error.message);
+          console.error("API 요청 중 오류:", error);
         }
       };
-    
-      // fetchCompanies 함수를 실행합니다.
-      fetchCompanies();
-    }, []);
-      
+
+      fetchData();
+    }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링 될 때에만 API 호출
+
     const fadeAnimation = useSpring({
         opacity: 1,
         transform: 'translateY(0)',
@@ -115,12 +119,14 @@ const TestResult2 = () => {
                 {/* 해당기업 서머리 */}
                 <animated.article id="companies" style={companiesAnimation}>
                   <details>
-                    <summary style={ { textAlign:"center"}}><strong><mark>Click</mark> 하여 기업리스트 확인</strong><br/><br/>(리스트를 복사해두셨다가 <mark>상세정보 검색</mark>에 활용하시면 편해요!)</summary>
+                    <summary style={ { textAlign:"center"}}><strong><mark>Click</mark> 하여 기업리스트 확인</strong><br/><br/>(리스트 복사 후<mark>상세정보 검색</mark>에 활용 해보세요!)</summary>
                       <h5 style={{ textAlign:"center" }}>
                         <br/>
-                        {companies.map((company, index) => (
-                        <mark key={index}>{company.corp_name}</mark>
+                        <mark>{/* corpNames 데이터 출력 */}
+                        {corpNames.map((corpName, index) => (
+                        <span key={index}>{corpName}<br/></span>
                         ))}
+                        </mark>
                       </h5>
                   </details>
                 </animated.article>
@@ -136,7 +142,7 @@ const TestResult2 = () => {
                       <strong>기업 세부정보 알아보기</strong>
                       </button>
                   </Link>
-                </div>
+                </div><hr/><hr/><hr/>
             </animated.main>
 
     )
